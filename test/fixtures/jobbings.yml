@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: jobbings
+#
+#  id         :integer          not null, primary key
+#  job_id     :integer
+#  program_id :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_id: 
+  program_id: 
+
+two:
+  job_id: 
+  program_id: 

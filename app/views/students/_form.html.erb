@@ -1,0 +1,70 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name, :class => "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :telephone %><br>
+    <%= f.text_field :telephone, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :age %><br>
+    <%= f.number_field :age, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mail %><br>
+    <%= f.text_field :mail, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :city %><br>
+    <%= f.text_field :city, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :etablissement %><br>
+    <%= f.text_field :etablissement, :class => "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :previous_studies %><br>
+    <%= f.text_area :previous_studies, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :filieres %><br>
+    <%= f.text_field :filieres, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mean_grade %><br>
+    <%= f.number_field :mean_grade, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :father_profession %><br>
+    <%= f.text_field :father_profession, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_profession %><br>
+    <%= f.text_field :mother_profession, :class => "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :general_comment %><br>
+    <%= f.text_area :general_comment, :class => "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.submit "Créer nouvel Etudiant", :class => "btn btn-success" %>
+  </div>
+<% end %>

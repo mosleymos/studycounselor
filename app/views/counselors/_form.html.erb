@@ -1,0 +1,185 @@
+<%= form_for(@counselor) do |f| %>
+<% if @counselor.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@counselor.errors.count, "error") %> prohibited this counselor from being saved:</h2>
+
+	<ul>
+		<% @counselor.errors.full_messages.each do |message| %>
+		<li>
+			<%= message %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<section class="about section">
+	<div class="section-inner">
+
+		<h2 class="page-header"> Information basiques</h2>
+		<div class="form-group">
+			<%= f.label :first_name, "Prénom" %>
+			<br>
+			<%= f.text_field :first_name, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :last_name, "Nom de famille" %>
+			<br>
+			<%= f.text_field :last_name, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :birthdate, "Date de naissance" %>
+			<br>
+			<%= f.date_select :birthdate, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :email, "Email" %>
+			<br>
+			<%= f.text_field :email, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :telephone, "Téléphone" %>
+			<br>
+			<%= f.text_field :telephone, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :image_url, "Photo du conseiller" %>
+			<br>
+			<%= f.file_field :image_url, class: "form-control"  %>
+
+		</div>
+		<div class="form-group">
+			<%= f.label :address %>
+			<br>
+			<%= f.text_area :address, class: "form-control" %>
+		</div>
+
+	</div>
+</section>
+
+<section class="about section">
+	<div class="section-inner">
+		<h2 class="page-header">Description détaillées</h2>
+
+		<div class="form-group">
+			<%= f.label :general_description %>
+			<br>
+			<%= f.text_area :general_description, class: "form-control summernote" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :school_description %>
+			<br>
+			<%= f.text_area :school_description, class: "form-control summernote" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :jobs_description  %>
+			<br>
+			<%= f.text_area :jobs_description , class: "form-control summernote" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :availibility_description  %>
+			<br>
+			<%= f.text_area :availibility_description , class: "form-control summernote" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :approved_by_administrator %>
+			<br>
+			<%= f.check_box :approved_by_administrator, class: "form-control" %>
+		</div>
+	</div>
+</section>
+
+<section class="about section">
+	<div class="section-inner">
+
+		<h2 class="page-header">Réseaux sociaux</h2>
+		<div class="form-group">
+			<%= f.label :facebook_url, "Url Facebook" %>
+			<br>
+			<%= f.text_field :facebook_url, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :twitter_url, "Url Twitter" %>
+			<br>
+			<%= f.text_field :twitter_url, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :linkedin_url, "Url Linkedin" %>
+			<br>
+			<%= f.text_field :linkedin_url, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :google_plus_url, "Url Google +" %>
+			<br>
+			<%= f.text_field :google_plus_url, class: "form-control" %>
+		</div>
+
+	</div>
+</section>
+
+<section class="about section">
+	<div class="section-inner">
+
+		<h2 class="page-header">Catégories et Tags</h2>
+
+		<div class="form-group">
+			<%= f.label :categories_list, "Les catégories dans lesquelles vous êtes compétents", :class => 'control-label' %>
+			<div class="controls">
+				<%= f.text_field :categories_list, :placeholder => "Les catégories", :id =>"form-field-tags" %>
+				<span class="help-block">Liste des catégories dans lesquelles vous êtes qualifiés</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :tags_list, "Tags associés" %>
+			<br>
+			<%= f.text_field :tags_list, class: "form-control", :id => "taginput" %>
+		</div>
+
+		<div class="form-group text-center">
+			<%= f.submit "Update", class: "btn btn-success btn-lg" %>
+		</div>
+		<% end %>
+	</div>
+</section>
+
+<script type="text/javascript">
+	$(function() {
+		
+		$('#form-field-tags').tokenInput('/categories.json', {
+				crossDomain : false,
+				preventDuplicates: true,
+				propertyToSearch: "name",
+				prePopulate: <%= @counselor.categories.to_json.html_safe %>
+			});
+				
+		
+			$('#taginput').tagsInput({
+			'autocomplete_url' : "/tags.json",
+			'height' : '100px',
+			'width' : '100%',
+			'interactive' : true,
+			'defaultText' : 'Ajouter un métier',
+			'removeWithBackspace' : true,
+			'minChars' : 0,
+			'maxChars' : 0, //if not provided there is no limit,
+			'placeholderColor' : '#666666'
+			// my parameters here
+		});
+		
+		$('.summernote').summernote({
+			height : 300, // set editor height
+
+			minHeight : null, // set minimum height of editor
+			maxHeight : null // set maximum height of editor
+
+		});
+				
+	}); 
+</script>
+

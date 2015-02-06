@@ -1,0 +1,80 @@
+<%= form_for(@job) do |f| %>
+<% if @job.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+	<ul>
+		<% @job.errors.full_messages.each do |message| %>
+		<li>
+			<%= message %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="form-group">
+	<%= f.label :name, "Nom du métier" %>
+	<br>
+	<%= f.text_field :name, class: "form-control"  %>
+</div>
+<div class="form-group">
+	<%= f.label :description, "Description du métier" %>
+	<br>
+	<%= f.text_area :description, class: "form-control summernote"  %>
+</div>
+<div class="form-group">
+	<%= f.label :image_url, "Image représentant le métier" %>
+	<br>
+	<%= f.file_field :image_url, class: "form-control"  %>
+
+</div>
+<div>
+	L'image enregistrée pour l'instant :
+	<p>
+		<%= image_tag @job.image_url.to_s, :class => "profile-image img-responsive", :alt => "Job image", :style => "width: 200px;"%>
+	</p>
+</div>
+<div class="form-group">
+	<%= f.label :mean_salary, "Salaire moyen du métier" %>
+	<br>
+	<%= f.text_field :mean_salary, class: "form-control"  %>
+</div>
+
+<div class="form-group">
+	<%= f.label :tags_list, "Tags associés" %>
+	<br>
+	<%= f.text_field :tags_list, class: "form-control", :id => "taginput" %>
+</div>
+
+<div class="actions">
+	<%= f.submit "Create/Update", :class => "btn btn-success btn-lg" %>
+</div>
+<% end %>
+
+
+<script>
+	$(function() {
+		$('.summernote').summernote({
+			height : 300, // set editor height
+
+			minHeight : null, // set minimum height of editor
+			maxHeight : null // set maximum height of editor
+
+		});
+
+		$('#taginput').tagsInput({
+			'autocomplete_url' : "/tags.json",
+			'height' : '100px',
+			'width' : '100%',
+			'interactive' : true,
+			'defaultText' : 'Ajouter un métier',
+			'removeWithBackspace' : true,
+			'minChars' : 0,
+			'maxChars' : 0, //if not provided there is no limit,
+			'placeholderColor' : '#666666'
+			// my parameters here
+		});
+
+	})
+</script>

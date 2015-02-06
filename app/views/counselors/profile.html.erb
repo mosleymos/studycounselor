@@ -1,0 +1,12 @@
+<h1 class="text-center page-header">Dashboard de <%= current_counselor.full_name%></h1>
+
+<script>
+	$(function() {
+		var pusher = new Pusher('c46da87d78625cf39e36');
+		var chatWidget = new PusherChatWidget(pusher, {
+			channelName: "<%= @counselor.pusher_channel_name.to_s %>",
+			chatEndPoint : '/messages/chat'
+			
+		});
+	}); 
+</script>

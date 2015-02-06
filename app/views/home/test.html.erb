@@ -1,0 +1,62 @@
+<h1>Page de test pour le site</h1>
+
+<div>
+	Status of connection : <span id="pusher-status" class="disconnected"><i class="fa fa-circle"></i></span>
+</div>
+<div id="status-text"></div>
+
+<div>
+	<h2>Tous les messages</h2>
+	<div id="pusher-messages">
+		
+	</div>
+</div>
+
+
+
+<script>
+	$(function() {
+		var pusher = new Pusher('c46da87d78625cf39e36');
+		var chatWidget = new PusherChatWidget(pusher, {
+			chatEndPoint : '/messages/chat'
+		});
+	}); 
+</script>
+
+<script type="text/javascript">
+	// Enable pusher logging - don't include this in production
+	Pusher.log = function(message) {
+		if (window.console && window.console.log) {
+			window.console.log(message);
+		}
+	};
+
+	var pusher = new Pusher('c46da87d78625cf39e36');
+	
+	// Subscribe to the channel test
+	var channel = pusher.subscribe('test-channel');
+	// Bind to the louis event and alert
+	channel.bind('louis-event', function(data) {
+		$('#pusher-messages').append('<p>' + data.message + '<p>');
+	});
+
+	pusher.connection.bind('state_change', function(states) {
+		// states = {previous: 'oldState', current: 'newState'}
+		$('#status-text').text("Pusher's current state is " + states.current);
+	});
+
+	pusher.connection.bind('connected', function(change) {
+		$('#pusher-status').removeClass();
+		$('#pusher-status').addClass("connected");
+	});
+
+	pusher.connection.bind('connecting', function(change) {
+		$('#pusher-status').removeClass();
+		$('#pusher-status').addClass("connecting");
+	});
+
+	pusher.connection.bind('disconnected', function(change) {
+		$('#pusher-status').removeClass();
+		$('#pusher-status').addClass("disconnected");
+	}); 
+</script>

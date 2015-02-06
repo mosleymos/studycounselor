@@ -1,0 +1,62 @@
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name">Rechercher un conseiller</h1>
+			<h2 class="desc">Tous les conseillers enregistrés sur Study Counselor</h2>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th>First name</th>
+								<th>Last name</th>
+								<th>Birthdate</th>
+								<th>Mail</th>
+								<th>Telephone</th>
+								
+								<th>Approved by administrator</th>
+								<th colspan="3"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% @counselors.each do |counselor| %>
+							<tr>
+								<td><%= counselor.first_name %></td>
+								<td><%= counselor.last_name %></td>
+								<td><%= counselor.birthdate %></td>
+								<td><%= counselor.email %></td>
+								<td><%= counselor.telephone %></td>
+								
+								
+								<td><%= counselor.approved_by_administrator %></td>
+								<td><%= link_to 'Show', counselor %></td>
+								<td><%= link_to 'Edit', edit_counselor_path(counselor) %></td>
+								<td><%= link_to 'Destroy', counselor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+							</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<br>
+<% if current_administrator %>
+<%= link_to 'New Counselor', new_counselor_path, :class => "btn btn-success" %>
+<% end %>

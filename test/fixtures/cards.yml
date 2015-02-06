@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: cards
+#
+#  id                   :integer          not null, primary key
+#  appointment_datetime :datetime
+#  comment_text         :text
+#  avaibility_text      :text
+#  student_id           :integer
+#  counselor_id         :integer
+#  created_at           :datetime
+#  updated_at           :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment_datetime: 2014-12-23 16:39:42
+  comment_text: MyText
+  avaibility_text: MyText
+  student_id: 
+  counselor_id: 
+
+two:
+  appointment_datetime: 2014-12-23 16:39:42
+  comment_text: MyText
+  avaibility_text: MyText
+  student_id: 
+  counselor_id: 

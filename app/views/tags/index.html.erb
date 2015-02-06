@@ -1,0 +1,50 @@
+<header class="header">
+	<div class="container">
+		<div class="profile-content pull-left">
+			<h1 class="name">Liste des tags</h1>
+			<h2 class="desc">Tous les tags de Study Counselor</h2>
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Image url</th>
+								
+								<th colspan="3"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% @tags.each do |tag| %>
+							<tr>
+								<td><%= tag.name %></td>
+								<td><%= tag.description %></td>
+								<td><%= tag.image_url %></td>
+								
+								<td><%= link_to 'Show', tag %></td>
+								<td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+								<td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+							</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<br>
+
+<%= link_to 'New Tag', new_tag_path %>

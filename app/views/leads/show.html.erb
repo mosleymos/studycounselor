@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @lead.card %>
+</p>
+
+<p>
+  <strong>Program:</strong>
+  <%= @lead.program %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @lead.comment %>
+</p>
+
+<p>
+  <strong>Recall:</strong>
+  <%= @lead.recall %>
+</p>
+
+<p>
+  <strong>Document:</strong>
+  <%= @lead.document %>
+</p>
+
+<p>
+  <strong>Approved by school:</strong>
+  <%= @lead.approved_by_school %>
+</p>
+
+<%= link_to 'Edit', edit_lead_path(@lead) %> |
+<%= link_to 'Back', leads_path %>

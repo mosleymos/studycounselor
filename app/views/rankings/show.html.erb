@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @ranking.student %>
+</p>
+
+<p>
+  <strong>Counselor:</strong>
+  <%= @ranking.counselor %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @ranking.comment %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @ranking.grade %>
+</p>
+
+<%= link_to 'Edit', edit_ranking_path(@ranking) %> |
+<%= link_to 'Back', rankings_path %>

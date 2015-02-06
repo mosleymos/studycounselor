@@ -1,0 +1,28 @@
+<!-- ******HEADER****** -->
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name">Mise à jour d'un métier</h1>
+			<h2 class="desc">Métier dans la base Study Counselor</h2>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+					<%= render 'form' %>
+
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<%= link_to 'Show', @job %> |
+<%= link_to 'Back', jobs_path %>

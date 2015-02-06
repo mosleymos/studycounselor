@@ -1,0 +1,56 @@
+<!-- ******HEADER****** -->
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name">Liste des Métiers</h1>
+			<h2 class="desc">Les métiers et les formations associées. Trouvez vos ecoles cibles en fonction des métiers désirés</h2>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Liste des métiers</h2>
+					<div class="content">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Description</th>
+				
+									
+									<th>Mean salary</th>
+									<th colspan="3"></th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<% @jobs.each do |job| %>
+								<tr>
+									<td><%= job.name %></td>
+									<td><%= job.description.to_s.html_safe %></td>
+									
+									<td><%= job.mean_salary %></td>
+									<td><%= link_to 'Show', job %></td>
+									<td><%= link_to 'Edit', edit_job_path(job) %></td>
+									<td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+								</tr>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<br>
+
+<%= link_to 'New Job', new_job_path, :class => "btn btn-success btn-lg" %>

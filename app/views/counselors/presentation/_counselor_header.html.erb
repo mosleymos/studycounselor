@@ -1,0 +1,23 @@
+<!-- ******HEADER for a Counselor Page****** -->
+<% counselor_presenter = CounselorPresenter.new(counselor, self) %>
+
+<header class="header">
+	<div class="container">
+		<%= counselor_presenter.avatar %>
+		<div class="profile-content pull-left">
+			<h1 class="name"><%= link_to counselor_presenter.full_name, counselor %></h1>
+			<% if local_assigns.has_key? :description%>
+			<h2 class="desc"><%= description %></h2>
+			<% end %>
+
+			<ul class="social list-inline">
+				<%= counselor_presenter.facebook%>
+				<%= counselor_presenter.twitter%>
+				<%= counselor_presenter.linkedin%>
+				<%= counselor_presenter.google_plus%>
+			</ul>
+		</div><!--//profile-->
+
+		<a class="btn btn-cta-primary pull-right" href="<%= new_counselor_appointment_path(counselor) %>" target="_blank"><i class="fa fa-paper-plane"></i> Me contacter</a>
+	</div><!--//container-->
+</header><!--//header-->

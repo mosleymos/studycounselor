@@ -1,0 +1,132 @@
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name">Espace Conseillers: Inscription</h1>
+			<h2 class="desc">Devenez un conseiller pour Study Counselor</h2>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-8 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+
+					<h2>Sign up</h2>
+
+					<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+					<%= devise_error_messages! %>
+
+					<div class="form-group">
+						<%= f.label :email %>
+						<br />
+						<%= f.email_field :email, autofocus: true, :class => "form-control" %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :first_name %>
+						<br>
+						<%= f.text_field :first_name, :class => "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :last_name %>
+						<br>
+						<%= f.text_field :last_name, :class => "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :birthdate %>
+						<br>
+						<%= f.date_select :birthdate, :class => "form-control" %>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label :telephone %>
+						<br>
+						<%= f.text_field :telephone, :class => "form-control" %>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label :address, "Address" %>
+						<br>
+						<%= f.text_area :address, :class => "form-control" %>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label :general_description %>
+						<br>
+						<%= f.text_area :general_description, :class => "form-control summernote" %>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label :school_description  %>
+						<br>
+						<%= f.text_area :school_description , :class => "form-control summernote" %>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label :jobs_description  %>
+						<br>
+						<%= f.text_area :jobs_description , :class => "form-control summernote" %>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label :availibility_description %>
+						<br>
+						<%= f.text_area :availibility_description, :class => "form-control summernote" %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :password %>
+						<br />
+						<%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :password_confirmation %>
+						<br />
+						<%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+					</div>
+
+					<div class="form-group">
+						<%= f.submit "Sign up", class: "btn btn-success btn-lg" %>
+					</div>
+					<% end %>
+
+					<%= render "counselors/shared/links" %>
+				</div>
+			</section>
+		</div>
+		<div class="secondary col-md-4 col-sm-12 col-xs-12">
+			<aside class="info aside section">
+				<div class="section-inner">
+					<h2 class="heading">Informations</h2>
+					<div class="content">
+						<p>
+							Une fois toutes les informations remplies, votre dossier sera revu par l'équipe de Study Counselor qui validera votre candidature.
+						</p>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</aside><!--//aside-->
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		$('.summernote').summernote({
+			height : 300, // set editor height
+
+			minHeight : null, // set minimum height of editor
+			maxHeight : null // set maximum height of editor
+
+		});
+
+		
+
+	})
+</script>
+

@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: categorizings
+#
+#  id                 :integer          not null, primary key
+#  category_id        :integer
+#  categorizable_id   :integer
+#  categorizable_type :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_id: 
+  categorizable_id: 
+  categorizable_type: Categorizable
+
+two:
+  category_id: 
+  categorizable_id: 
+  categorizable_type: Categorizable

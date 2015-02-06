@@ -1,0 +1,44 @@
+<!-- ******HEADER****** -->
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name">Espace connexion</h1>
+			<h2 class="desc">Espace dédié aux conseillers, ecoles et administratreurs désirant se connecter à leur compte Study Counselor</h2>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Connexion Conseillers</h2>
+					<div class="content">
+						<%= link_to "Connexion", new_counselor_session_path, class: "btn btn-success btn-lg" %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Connexion Ecoles</h2>
+					<div class="content">
+						<%= link_to "Connexion", new_counselor_session_path, class: "btn btn-success btn-lg"  %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Connexion Administrateurs</h2>
+					<div class="content">
+						<%= link_to "Connexion", new_administrator_session_path, class: "btn btn-success btn-lg"  %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+		</div>
+	</div>
+</div>
+

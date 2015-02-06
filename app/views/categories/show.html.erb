@@ -1,0 +1,48 @@
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name"><%= @category.name %></h1>
+			<h2 class="desc"><%= @category.description%></h2>
+
+		</div><!--//profile-->
+		<%= link_to 'Nouvelle category', new_category_path, class: "btn btn-success pull-right" %>
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Les conseillers de la catégorie</h2>
+					<div class="content">
+						<% @category.counselors.each do |counselor| %>
+						<p>
+							<%= link_to counselor.full_name, counselor %>
+						</p>
+						<% end %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Les Ecoles de la catégorie</h2>
+					<div class="content">
+						<% @category.schools.each do |school| %>
+						<p>
+							<%= link_to school.name, school %>
+						</p>
+						<% end %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+		</div>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

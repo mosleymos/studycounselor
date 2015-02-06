@@ -1,0 +1,22 @@
+<%= render partial: "counselors/presentation/counselor_header", locals:{counselor: @counselor, description: "Nouveau rendez-vous" } %>
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+					<h2>Disponibilités du conseiller</h2>
+					<%= @counselor.availibility_description.to_s.html_safe%>
+				</div>
+			</section>
+		</div>
+		
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<%= render 'form' %>
+		</div>
+	</div>
+</div>
+
+
+
+<%= link_to 'Back', counselor_appointments_path(@counselor) %>

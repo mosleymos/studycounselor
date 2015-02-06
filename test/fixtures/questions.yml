@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: questions
+#
+#  id            :integer          not null, primary key
+#  name          :text
+#  description   :text
+#  research_name :text
+#  first_letter  :string(255)
+#  slug          :text
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  description: MyText
+  research_name: MyText
+  first_letter: MyString
+  slug: MyText
+
+two:
+  name: MyText
+  description: MyText
+  research_name: MyText
+  first_letter: MyString
+  slug: MyText

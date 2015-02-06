@@ -1,0 +1,76 @@
+<!-- ******HEADER****** -->
+<header class="header">
+	<div class="container">
+		<%= image_tag @job.image_url.to_s, :class => "profile-image img-responsive pull-left", :alt => "Job image", :style => "width: 200px;"%>
+		
+		<div class="profile-content pull-left">
+			<h1 class="name"><%= @job.name %></h1>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-8 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Description</h2>
+					<div class="content">
+						<%= @job.description.to_s.html_safe%>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+			
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Les programmes préparant à ce métier</h2>
+					<div class="content">
+						<% @job.programs.each do |program| %>
+						<div>
+							<%= link_to program.name, program %>
+						</div>
+						
+						<% end %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+		</div>
+		<div class="secondary col-md-4 col-sm-12 col-xs-12">
+
+			<aside class="blog aside section">
+				<div class="section-inner">
+					<h2 class="heading">Salaire Moyen</h2>
+					<p>
+						<%= @job.mean_salary %> euros
+					</p>
+				</div><!--//section-inner-->
+			</aside><!--//section-->
+			
+			<aside class="blog aside section">
+				<div class="section-inner">
+					<h2 class="heading">Compétences requises</h2>
+					<p>
+						<%= @job.try(:skills) %> 
+					</p>
+				</div><!--//section-inner-->
+			</aside><!--//section-->
+			
+			<aside class="blog aside section">
+				<div class="section-inner">
+					<h2 class="heading">Tags associés</h2>
+					<% @job.tags.each do |tag|%>
+					<p>
+						 <%= link_to tag.name, tag %>
+					</p>
+					<% end %>
+				</div><!--//section-inner-->
+			</aside><!--//section-->
+		</div>
+	</div>
+</div>
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

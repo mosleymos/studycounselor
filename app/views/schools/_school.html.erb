@@ -1,0 +1,10 @@
+<section class="about section">
+	<div class="section-inner">
+		<%= image_tag school.avatar, :class => "profile-image img-responsive pull-left", :alt => "Job image", :style => "width: 200px;"%>
+		<div>
+			<h2><%= link_to school.name, school %></h2>
+			<p><%= school.description %></p>
+			<p>Nombre de programmes : <%= school.programs.size %></p>
+		</div>
+	</div>
+</section>

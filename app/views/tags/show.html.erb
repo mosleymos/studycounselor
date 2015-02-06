@@ -1,0 +1,29 @@
+<header class="header">
+	<div class="container">
+		<div class="profile-content pull-left">
+			<h1 class="name">#<%= @tag.name %></h1>
+			<h2 class="desc"><%= @tag.description%></h2>
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+					<h2>Programmes ayant ce tag</h2>
+					<% @tag.programs.each do |program| %>
+					<p><%= link_to program.name, program %></p>
+					
+					<% end %>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
+<%= link_to 'Back', tags_path %>

@@ -1,0 +1,119 @@
+<!-- ******HEADER****** -->
+<header class="header">
+	<div class="container">
+		<%= image_tag @program.image_url.to_s, :class => "profile-image img-responsive pull-left", :alt => "Programme Image", :style => "width: 200px;"%>
+
+		<div class="profile-content pull-left">
+			<h1 class="name">Programme : <%= @program.name %> - <%= @program.school.name%></h1>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-8 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Description</h2>
+					<div class="content">
+						<%= @program.description.to_s.html_safe%>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Admission au programme</h2>
+					<div class="content">
+						<%= @program.admission_description.to_s.html_safe%>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">La pédagogie du programme</h2>
+					<div class="content">
+						<%= @program.pedagogy_description .to_s.html_safe%>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Les perspectives de l'étudiant</h2>
+					<div class="content">
+						<%= @program.perspectives_description.to_s.html_safe%>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Les métiers possibles à l'issu de la formation</h2>
+					<div class="content">
+						<% @program.jobs.each do |job| %>
+						<p>
+							<%= link_to job.name, job %>
+						</p>
+
+						<% end %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+		</div>
+		<div class="secondary col-md-4 col-sm-12 col-xs-12">
+
+			<aside class="blog aside section">
+				<div class="section-inner">
+					<h2 class="heading">Ecole : <%= link_to @program.school.name, @program.school %></h2>
+					<p>
+						<%= strip_tags(@program.school.description) %>
+					</p>
+				</div><!--//section-inner-->
+			</aside><!--//section-->
+
+			<aside class="blog aside section">
+				<div class="section-inner">
+					<h2 class="heading">Informations</h2>
+
+					<p>
+						<a href="<%= @program.program_url %>"> <%= @program.program_url %></a>
+					</p>
+					<p>
+						Durée du programme : <%= @program.program_duration %> ans
+					</p>
+
+					<p>
+						Année équivalente: <%= @program.equivalent_year %> ans
+					</p>
+					<p>
+						Campus: <%= @program.campus %>
+					</p>
+
+					<p>
+						Prix: <%= @program.price %>
+					</p>
+
+				</div><!--//section-inner-->
+			</aside><!--//section-->
+
+			<aside class="blog aside section">
+				<div class="section-inner">
+					<h2 class="heading">Tags liés au programme</h2>
+					<% @program.tags.each do |tag| %>
+					<p>
+						<%= link_to tag.name, tag %>
+					</p>
+					<% end %>
+				</div><!--//section-inner-->
+			</aside><!--//section-->
+		</div>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>

@@ -1,0 +1,106 @@
+<!-- ******HEADER****** -->
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name">Carte: Etudiant <%= @card.student.full_name %> | Conseiller <%= @card.counselor.full_name %></h1>
+			<h2 class="desc">Carte d'orientation écrite par un conseiller sur un étudiant</h2>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-8 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Date du rendez vous</h2>
+					<div class="content">
+						<%= @card.appointment_datetime %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Commentaire Général</h2>
+					<div class="content">
+						<%= @card.comment_text.to_s.html_safe %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Disponibilités de l'Etudiant</h2>
+					<div class="content">
+						<%= @card.avaibility_text.to_s.html_safe %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+
+			<section class="about section">
+				<div class="section-inner">
+					<h2 class="heading">Les Ecoles conseillées</h2>
+					<div class="content">
+						<% @card.schools.each do |school| %>
+						<p>
+							<%= link_to school.name, school %>
+						</p>
+						<% end %>
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</section><!--//section-->
+		</div>
+		<div class="secondary col-md-4 col-sm-12 col-xs-12">
+			<aside class="info aside section">
+				<div class="section-inner">
+					<h2 class="heading">Information</h2>
+					<div class="content">
+						<p>
+							Création de la carte: <%= @card.created_at %>
+						</p>
+						<p>
+							Mise à jour de la carte: <%= @card.updated_at %>
+						</p>
+
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</aside><!--//aside-->
+			
+			
+			<aside class="info aside section">
+				<div class="section-inner">
+					<h2 class="heading ">Etudiant</h2>
+					<div class="content">
+						<p>
+							<%= link_to @card.student.full_name, @card.student %>
+						</p>
+						
+
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</aside><!--//aside-->
+			
+			<aside class="info aside section">
+				<div class="section-inner">
+					<h2 class="heading">Conseiller</h2>
+					<div class="content">
+						<p>
+							<%= link_to @card.counselor.full_name, @card.counselor %>
+						</p>
+						
+
+					</div><!--//content-->
+				</div><!--//section-inner-->
+			</aside><!--//aside-->
+
+		</div>
+	</div>
+</div>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

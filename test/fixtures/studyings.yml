@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: studyings
+#
+#  id           :integer          not null, primary key
+#  counselor_id :integer
+#  school_id    :integer
+#  comment      :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  counselor_id: 
+  school_id: 
+  comment: MyText
+
+two:
+  counselor_id: 
+  school_id: 
+  comment: MyText

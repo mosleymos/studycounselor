@@ -1,0 +1,29 @@
+<%= render partial: "counselors/presentation/counselor_header", locals:{counselor: @counselor, description: "Rendez-vous" } %>
+
+<p>
+  <strong>Student:</strong>
+  <%= @appointment.student %>
+</p>
+
+<p>
+  <strong>Counselor:</strong>
+  <%= @appointment.counselor %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @appointment.telephone %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @appointment.date %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @appointment.comment %>
+</p>
+
+<%= link_to 'Edit', edit_counselor_appointment_path(@appointment.counselor, @appointment) %> |
+<%= link_to 'Back', counselor_appointments_path(@counselor) %>

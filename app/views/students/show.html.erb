@@ -1,0 +1,262 @@
+
+    <!-- ******HEADER****** --> 
+    <header class="header">
+        <div class="container">                       
+            <img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+            <div class="profile-content pull-left">
+                <h1 class="name"><%= @student.full_name %></h1>
+                <h2 class="desc"></h2>   
+                
+            </div><!--//profile-->
+            
+            <a class="btn btn-cta-primary pull-right" href="<%= new_card_path(:student_id => @student.id) %>"><i class="fa fa-paper-plane"></i> Créer une carte</a>
+        </div><!--//container-->
+    </header><!--//header-->
+    
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-8 col-sm-12 col-xs-12">
+                <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading">A propos de moi</h2>
+                        <div class="content">
+                            Etablissement actuel : <%= @student.etablissement.to_s%>
+                        </div><!--//content-->
+                        <div class="content">
+                            Filière : <%= @student.filieres.to_s%>
+                        </div><!--//content-->
+                        <div class="content">
+                            <%= @student.previous_studies.to_s.html_safe%>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+    
+               <section class="latest section">
+                    <div class="section-inner">
+                        <h2 class="heading">Mon parcours scolaire</h2>
+                        <div class="content">    
+                                               
+                            <div class="item featured text-center">
+                                
+                                    
+                                <div class="desc text-left">  
+                                	                        
+                                </div><!--//desc-->         
+                            </div><!--//item-->
+                            <hr class="divider" />
+                            <div class="item row">
+                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
+                                <img class="img-responsive project-image" src="assets/images/projects/project-4.png" alt="project name" />
+                                </a>
+                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                    <h3 class="title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">Velocity - Designed for Products</a></h3>
+                                    <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
+                                    <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                                </div><!--//desc-->                          
+                            </div><!--//item-->
+                            
+                            <div class="item row">
+                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://wrapbootstrap.com/theme/tempo-designed-for-startups-WB07364T3?ref=3wm" target="_blank">
+                                <img class="img-responsive project-image" src="assets/images/projects/project-1.png" alt="project name" />
+                                </a>
+                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                    <h3 class="title"><a href="https://wrapbootstrap.com/theme/tempo-designed-for-startups-WB07364T3?ref=3wm" target="_blank">Tempo - Designed for Startups</a></h3>
+                                    <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
+                                    <p><a class="more-link" href="https://wrapbootstrap.com/theme/tempo-designed-for-startups-WB07364T3?ref=3wm" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                                </div><!--//desc-->                          
+                            </div><!--//item-->
+                            
+                            <div class="item row">
+                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://wrapbootstrap.com/theme/delta-promote-mobile-app-effectively-WB09R23P8?ref=3wm" target="_blank">
+                                <img class="img-responsive project-image" src="assets/images/projects/project-2.png" alt="project name" />
+                                </a>
+                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                    <h3 class="title"><a href="https://wrapbootstrap.com/theme/delta-promote-mobile-app-effectively-WB09R23P8?ref=3wm" target="_blank">Delta - Designed for Mobile Apps</a></h3>
+                                    <p> You can put one of your secondary projects here. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
+                                    <p><a class="more-link" href="https://wrapbootstrap.com/theme/delta-promote-mobile-app-effectively-WB09R23P8?ref=3wm" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                                </div><!--//desc-->                          
+                            </div><!--//item-->
+                            
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+                
+               
+                
+                <section class="experience section">
+                    <div class="section-inner">
+                        <h2 class="heading">Commentaire général</h2>
+                        <div class="content">
+                            <%= @student.general_comment%>
+                            
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+                
+                <section class="experience section">
+                    <div class="section-inner">
+                        <h2 class="heading">Cartes sur l'Étudiant</h2>
+                        <div class="content">
+                            <% @student.cards.each do |card| %>
+                            
+                            <li>
+                            	<%= link_to card do %>
+                            	Conseiller : <%= card.counselor.try(:full_name)%> | Crée le : <%= card.created_at %>
+                            	<% end %>
+                            </li>
+                            
+                            <% end %>
+                            
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+                
+            </div><!--//primary-->
+            <div class="secondary col-md-4 col-sm-12 col-xs-12">
+                 <aside class="info aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Informations</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span><%= @student.city %></li>
+                                <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="#"><%= @student.mail %></a></li>
+                                <li><i class="fa fa-user"></i><span class="sr-only">Age:</span><a href="#"><%= @student.age %></a></li>
+                                <li><i class="fa fa-phone"></i><span class="sr-only">Telephone:</span><a href="#"><%= @student.telephone %></a></li>
+                                
+                                
+                            </ul>
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </aside><!--//aside-->
+                
+                <aside class="skills aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Grade</h2>
+                        <div class="content">
+                            <p class="intro">
+								Liste tous les domaines dans lesquels ce conseiller peut vous éclairer
+							</p>                            
+                            <p>
+                            	Moyenne générale : <%= @student.mean_grade%>
+                            </p>              
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </aside><!--//section-->
+                
+                <aside class="testimonials aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Professions des parents</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h4>Profession du père</h4> 
+                                <%= @student.father_profession%>                                                       
+                            </div><!--//item-->
+                            <div class="item">
+                                <h4>Profession de la mère</h4> 
+                                <%= @student.mother_profession%>                                                       
+                            </div><!--//item-->
+                            
+                            
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+                
+                
+                            
+                
+                
+                <aside class="blog aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Disponibilités</h2>
+                       <p></p>
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+                
+                
+              
+            </div><!--//secondary-->    
+        </div><!--//row-->
+    </div><!--//masonry-->
+    
+    
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @student.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @student.last_name %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @student.telephone %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @student.age %>
+</p>
+
+<p>
+  <strong>Mail:</strong>
+  <%= @student.mail %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @student.city %>
+</p>
+
+<p>
+  <strong>Etablissement:</strong>
+  <%= @student.etablissement %>
+</p>
+
+<p>
+  <strong>Previous studies:</strong>
+  <%= @student.previous_studies %>
+</p>
+
+<p>
+  <strong>Filieres:</strong>
+  <%= @student.filieres %>
+</p>
+
+<p>
+  <strong>Mean grade:</strong>
+  <%= @student.mean_grade %>
+</p>
+
+<p>
+  <strong>Father profession:</strong>
+  <%= @student.father_profession %>
+</p>
+
+<p>
+  <strong>Mother profession:</strong>
+  <%= @student.mother_profession %>
+</p>
+
+<p>
+  <strong>General comment:</strong>
+  <%= @student.general_comment %>
+</p>
+
+<p>
+  <strong>First letter:</strong>
+  <%= @student.first_letter %>
+</p>
+
+<p>
+  <strong>Research name:</strong>
+  <%= @student.research_name %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

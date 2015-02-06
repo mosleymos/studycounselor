@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: questionings
+#
+#  id           :integer          not null, primary key
+#  question_id  :integer
+#  counselor_id :integer
+#  priority     :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question_id: 
+  counselor_id: 
+  priority: 1
+
+two:
+  question_id: 
+  counselor_id: 
+  priority: 1

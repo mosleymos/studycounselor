@@ -1,0 +1,118 @@
+<header class="header">
+	<div class="container">
+		<div class="profile-content pull-left">
+			<h1 class="name">Etudiant <%= @student.full_name %>: Création d'une nouvelle carte d'orientation</h1>
+			<h2 class="desc">Création d'une carte d'orientation pour un etudiant. Après chaque rendez-vous téléphonique les conseillers remplissent une carte d'orientation pour l'étudiant. La carte est spéciafique au conseiller et complète la fiche global de l'étudiant.</h2>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<% if current_counselor%>
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+
+					<%= form_for(@card) do |f| %>
+					<% if @card.errors.any? %>
+					<div id="error_explanation">
+						<h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+						<ul>
+							<% @card.errors.full_messages.each do |message| %>
+							<li>
+								<%= message %>
+							</li>
+							<% end %>
+						</ul>
+					</div>
+					<% end %>
+
+					<div>
+						<h3>Conseiller: <%= current_counselor.full_name%></h3>
+						<br />
+					</div>
+					<div class="form-group">
+						<%= f.label :appointment_datetime %>
+						<br>
+						<%= f.datetime_select :appointment_datetime, :class => "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :comment_text, "Commentaires généraux" %>
+						<br>
+						<%= f.text_area :comment_text, :class => "form-control summernote", :rows => "13" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :avaibility_text, "Disponibilités de l'Etudiant pour le rappeler" %>
+						<br>
+						<%= f.text_area :avaibility_text, :class => "form-control summernote", :rows => "5" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :programs_list, "Ecoles conseillées", :class => 'control-label' %>
+						<div class="controls">
+							<%= f.text_field :programs_list, :placeholder => "Les Ecoles conseillées pour l'étudiant", :id =>"form-field-tags" %>
+							<span class="help-block">Liste des écoles conseillées pour l'étudiant</span>
+						</div>
+					</div>
+
+					<%= f.hidden_field :student_id, :value => @student.id %>
+					<%= f.hidden_field :counselor_id, :value => current_counselor.id %>
+
+					<div class="form-group text-center">
+						<%= f.submit "Créer la carte d'orientation", class: "btn btn-success btn-lg" %>
+					</div>
+					<% end %>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<% else %>
+
+<div>
+	Vous n'êtes pas connecté en tant que conseiller, vous ne pouvez pas créer de carte pour un étudiant
+</div>
+
+<% end %>
+
+<%= link_to 'Back', cards_path %>
+
+<script type="text/javascript">
+	$(function() {
+		
+			$('#form-field-tags').tokenInput('/schools.json', {
+				crossDomain : false
+			});
+		
+
+		$('#form-field-tag').tagsinput({
+			typeahead : {
+				source : function(item) {
+					return $.getJSON("/schools", {
+						term : item
+					});
+				},
+				freeInput : true
+			}
+		});
+		
+		
+	}); 
+</script>
+
+<script>
+	$(function() {
+		$('.summernote').summernote({
+			height : 300, // set editor height
+
+			minHeight : null, // set minimum height of editor
+			maxHeight : null // set maximum height of editor
+
+		});
+	})
+</script>

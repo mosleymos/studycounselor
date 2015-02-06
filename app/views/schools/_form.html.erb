@@ -1,0 +1,166 @@
+<%= form_for(@school) do |f| %>
+<% if @school.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:</h2>
+
+	<ul>
+		<% @school.errors.full_messages.each do |message| %>
+		<li>
+			<%= message %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<section class="about section">
+	<div class="section-inner">
+		<h2>Informations Générales</h2>
+
+		<div class="form-group">
+			<%= f.label :name, "Nom" %>
+			<br>
+			<%= f.text_area :name, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :description, "Description" %>
+			<br>
+			<%= f.text_area :description, class: "form-control summernote" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :goals, "Les débouchés de l'Ecole" %>
+			<br>
+			<%= f.text_area :goals, class: "form-control summernote" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :statistics_text, "Statistiques sur l'Ecole" %>
+			<br>
+			<%= f.text_area :statistics_text, class: "form-control summernote" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :moto, "Devise" %>
+			<br>
+			<%= f.text_area :moto, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :image_url, "Image de l'école" %>
+			<br>
+			<%= f.file_field :image_url, class: "form-control"  %>
+		</div>
+		
+		<div class="form-group">
+			<%= f.label :categories_list, "Les catégories dans lesquelles vous êtes compétents", :class => 'control-label' %>
+			<div class="controls">
+				<%= f.text_field :categories_list, :placeholder => "Les catégories", :id =>"form-field-tags" %>
+				<span class="help-block">Liste des catégories dans lesquelles vous êtes qualifiés</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :tags_list, "Tags associés" %>
+			<br>
+			<%= f.text_field :tags_list, class: "form-control", :id => "taginput" %>
+		</div>
+	</div>
+</section>
+
+<section class="about section">
+	<div class="section-inner">
+		<h2>Contact</h2>
+		<div class="form-group">
+			<%= f.label :address, "Addresse de l'Ecole" %>
+			<br>
+			<%= f.text_field :address, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :school_url, "Addresse Web de l'Ecole" %>
+			<br>
+			<%= f.text_field :school_url, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :telephone, "Téléphone informations" %>
+			<br>
+			<%= f.text_field :telephone, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :contact_mail, "Mail de contact de l'Ecole" %>
+			<br>
+			<%= f.text_field :contact_mail, class: "form-control" %>
+		</div>
+
+	</div>
+</section>
+
+<hr />
+
+<section class="about section">
+	<div class="section-inner">
+		<h2>Réseaux sociaux</h2>
+		<div class="form-group">
+			<%= f.label :twitter_url, "Url de votre compte Twitter" %>
+			<br>
+			<%= f.text_field :twitter_url, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :facebook_url, "Url du compte facebook" %>
+			<br>
+			<%= f.text_field :facebook_url, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :youtube_url, "Url de la chaine Youtube" %>
+			<br>
+			<%= f.text_field :youtube_url, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :linkedin_url, "Url de votre compte linkedin" %>
+			<br>
+			<%= f.text_field :linkedin_url, class: "form-control" %>
+		</div>
+
+	</div>
+</section>
+
+<hr />
+
+<div class="form-group text-center">
+	<%= f.submit "Mettre à jour", class: "btn btn-success" %>
+</div>
+
+<% end %>
+
+<script>
+	$(function() {
+		$('.summernote').summernote({
+			height : 300, // set editor height
+
+			minHeight : null, // set minimum height of editor
+			maxHeight : null // set maximum height of editor
+
+		});
+		
+		$('#form-field-tags').tokenInput('/categories.json', {
+				crossDomain : false,
+				preventDuplicates: true,
+				propertyToSearch: "name",
+				prePopulate: <%= @school.categories.to_json.html_safe %>
+			});
+
+		$('#taginput').tagsInput({
+			'autocomplete_url' : "/tags.json",
+			'height' : '100px',
+			'width' : '100%',
+			'interactive' : true,
+			'defaultText' : 'Ajouter un métier',
+			'removeWithBackspace' : true,
+			'minChars' : 0,
+			'maxChars' : 0, //if not provided there is no limit,
+			'placeholderColor' : '#666666'
+			// my parameters here
+		});
+
+	})
+</script>
+

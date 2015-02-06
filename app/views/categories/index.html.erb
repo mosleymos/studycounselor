@@ -1,0 +1,52 @@
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name">Les catégories de Study Counselor</h1>
+			<h2 class="desc">Les catégories permettent de classer les Ecoles et les Conseillers</h2>
+
+		</div><!--//profile-->
+		<%= link_to 'Nouvelle question', new_question_path, class: "btn btn-success pull-right" %>
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								
+								<th colspan="2"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% @categories.each do |category| %>
+							<tr>
+								<td><%= link_to category.name, category %></td>
+								<td><%= category.description %></td>
+								
+								
+								<td><%= link_to 'Edit', edit_category_path(category) %></td>
+								<td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+							</tr>
+							<% end %>
+						</tbody>
+					</table>
+
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<br>
+
+<%= link_to 'New Category', new_category_path %>

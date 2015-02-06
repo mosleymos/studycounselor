@@ -1,0 +1,141 @@
+<%= form_for(@program) do |f| %>
+<% if @program.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@program.errors.count, "error") %> prohibited this program from being saved:</h2>
+
+	<ul>
+		<% @program.errors.full_messages.each do |message| %>
+		<li>
+			<%= message %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="form-group">
+							<%= f.label :name %>
+							<br>
+							<%= f.text_field :name, class: "form-control" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :description %>
+							<br>
+							<%= f.text_area :description, class: "form-control summernote" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :program_url %>
+							<br>
+							<%= f.text_area :program_url, class: "form-control" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :image_url %>
+							<br>
+							<%= f.file_field :image_url, class: "form-control"  %>
+
+						</div>
+						
+						<div class="form-group">
+							<%= f.label :equivalent_year %>
+							<br>
+							<%= f.text_field :equivalent_year, class: "form-control" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :program_duration %>
+							<br>
+							<%= f.text_field :program_duration, class: "form-control" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :admission_description %>
+							<br>
+							<%= f.text_area :admission_description, class: "form-control summernote" %>
+						</div>
+
+						<div class="form-group">
+							<%= f.label :pedagogy_description  %>
+							<br>
+							<%= f.text_area :pedagogy_description , class: "form-control summernote" %>
+						</div>
+
+						<div class="form-group">
+							<%= f.label :perspectives_description %>
+							<br>
+							<%= f.text_area :perspectives_description, class: "form-control summernote" %>
+						</div>
+
+						<div class="form-group">
+							<%= f.label :campus %>
+							<br>
+							<%= f.text_field :campus, class: "form-control" %>
+						</div>
+
+						<div class="form-group">
+							<%= f.label :diploma %>
+							<br>
+							<%= f.text_field :diploma, class: "form-control" %>
+						</div>
+
+						<div class="form-group">
+							<%= f.label :price %>
+							<br>
+							<%= f.number_field :price, class: "form-control" %>
+						</div>
+
+<div class="form-group">
+	<%= f.label :jobs_list, "Programme menant aux métiers suivants", :class => 'control-label' %>
+	<div class="controls">
+		<%= f.text_field :jobs_list, :placeholder => "Les métiers auxquels ce programme prépare", :id =>"form-field-tags" %>
+		<span class="help-block">Liste des métiers associés au programme</span>
+	</div>
+</div>
+
+<div class="form-group">
+	<%= f.label :tags_list, "Tags associés" %>
+	<br>
+	<%= f.text_field :tags_list, class: "form-control", :id => "taginput" %>
+</div>
+
+<div class="form-group">
+	<%= f.submit "Créer le programme",  class: "btn btn-success btn-lg" %>
+</div>
+<% end %>
+
+
+<script type="text/javascript">
+	$(function() {
+		
+			$('#form-field-tags').tokenInput('/jobs.json', {
+				crossDomain : false,
+				preventDuplicates: true,
+				prePopulate: <%= @program.jobs.map(&:attributes).to_json.html_safe %>
+			});
+				
+	}); 
+</script>
+
+<script>
+	$(function() {
+		$('.summernote').summernote({
+			height : 300, // set editor height
+
+			minHeight : null, // set minimum height of editor
+			maxHeight : null // set maximum height of editor
+
+		});
+
+		$('#taginput').tagsInput({
+			'autocomplete_url' : "/tags.json",
+			'height' : '100px',
+			'width' : '100%',
+			'interactive' : true,
+			'defaultText' : 'Ajouter un métier',
+			'removeWithBackspace' : true,
+			'minChars' : 0,
+			'maxChars' : 0, //if not provided there is no limit,
+			'placeholderColor' : '#666666'
+			// my parameters here
+		});
+
+	})
+</script>
+

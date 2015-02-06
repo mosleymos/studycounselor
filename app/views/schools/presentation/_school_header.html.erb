@@ -1,0 +1,31 @@
+<!-- ******HEADER****** -->
+<% school_presenter = SchoolPresenter.new(school, self) %>
+<header class="header">
+	<div class="container">
+
+		<%= school_presenter.avatar %>
+			
+		<div class="profile-content pull-left">
+			<h1 class="name"><%= link_to school.name, school %></h1>
+			<% if local_assigns.has_key? :description%>
+			<h2 class="desc"><%= description %></h2>
+			<% end %>
+			<ul class="social list-inline">
+				<li>
+					<a href="<%= school.twitter_url %>"><i class="fa fa-twitter"></i></a>
+				</li>
+				<li>
+					<a href="<%= school.facebook_url %>"><i class="fa fa-facebook"></i></a>
+				</li>
+				<li>
+					<a href="<%= school.linkedin_url %>"><i class="fa fa-linkedin"></i></a>
+				</li>
+				<li>
+					<a href="<%= school.youtube_url %>"><i class="fa fa-youtube"></i></a>
+				</li>
+
+			</ul>
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->

@@ -1,0 +1,54 @@
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name">Les questions fondamentales</h1>
+			<h2 class="desc">Les questions que vous vous posez et la réponse Study Counselor</h2>
+
+		</div><!--//profile-->
+		<%= link_to 'Nouvelle question', new_question_path, class: "btn btn-success pull-right" %>
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+
+					<table class="table">
+
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Research name</th>
+								<th>First letter</th>
+								<th>Slug</th>
+								<th colspan="3"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% @questions.each do |question| %>
+							<tr>
+								<td><%= question.name %></td>
+								<td><%= question.description %></td>
+								
+								<td><%= link_to 'Show', question %></td>
+								<td><%= link_to 'Edit', edit_question_path(question) %></td>
+								<td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+							</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<br>
+
+

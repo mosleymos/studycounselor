@@ -1,0 +1,66 @@
+<header class="header">
+	<div class="container">
+		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
+		<div class="profile-content pull-left">
+			<h1 class="name">Rechercher un Programme</h1>
+			<h2 class="desc">Toutes les programmes des Ecoles sur Study Counselor</h2>
+
+		</div><!--//profile-->
+
+	</div><!--//container-->
+</header><!--//header-->
+
+<div class="container sections-wrapper">
+	<div class="row">
+		<div class="primary col-md-12 col-sm-12 col-xs-12">
+			<section class="about section">
+				<div class="section-inner">
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Program url</th>
+								<th>Program image url</th>
+								<th>School</th>
+								<th>Equivalent year</th>
+								<th>Program duration</th>
+								<th>Prerequisites</th>
+								<th>First letter</th>
+								<th>Research name</th>
+								<th>Slug</th>
+								<th colspan="3"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% @programs.each do |program| %>
+							<tr>
+								<td><%= program.name %></td>
+								<td><%= program.description %></td>
+								<td><%= program.program_url %></td>
+								<td><%= program.program_image_url %></td>
+								<td><%= program.school %></td>
+								<td><%= program.equivalent_year %></td>
+								<td><%= program.program_duration %></td>
+								<td><%= program.prerequisites %></td>
+								<td><%= program.first_letter %></td>
+								<td><%= program.research_name %></td>
+								<td><%= program.slug %></td>
+								<td><%= link_to 'Show', program %></td>
+								<td><%= link_to 'Edit', edit_program_path(program) %></td>
+								<td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+							</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<br>
+
+<%= link_to 'New Program', new_program_path %>

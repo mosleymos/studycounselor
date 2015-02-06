@@ -1,0 +1,68 @@
+<% if counselor_signed_in?%>
+
+<p><%= current_counselor.full_name%></p>
+<ul class="nav nav-sidebar">
+	<li class="active">
+		<a href="<%= profile_counselor_path(current_counselor) %>">Dashboard</a>
+	</li>
+	<li>
+		<a href="<%= edit_counselor_path(current_counselor) %>">Informations personnelles</a>
+	</li>
+	<li>
+		<%= link_to "Votre profil public", current_counselor%>
+	</li>
+	
+</ul>
+<ul class="nav nav-sidebar">
+	<li>
+		<a href="<%= students_path%>">Liste des Etudiants</a>
+	</li>
+	<li>
+		<a href="<%= cards_counselor_path(current_counselor) %>">Ensemble de vos cards remplies</a>
+	</li>
+	<li>
+		<a href="<%= schools_path %>">Liste des Ecoles</a>
+	</li>
+</ul>
+<ul class="nav nav-sidebar">
+	<li>
+		<%= link_to "Se deconnecter", destroy_counselor_session_path, :method => :delete %>
+	</li>
+</ul>
+
+<% elsif administrator_signed_in? %>
+
+<p><%= current_administrator.email %></p>
+<ul class="nav nav-sidebar">
+	<li class="active">
+		<a href="<%= dashboard_administrator_path(current_administrator) %>">Dashboard</a>
+	</li>
+	
+</ul>
+<ul class="nav nav-sidebar">
+	<li>
+		<a href="<%= students_path%>">Liste des Etudiants</a>
+	</li>
+	<li>
+		<a href="<%= counselors_path%>">Liste des Conseillers</a>
+	</li>
+	<li>
+		<a href="<%= cards_path %>">Ensemble des cards</a>
+	</li>
+	<li>
+		<a href="<%= schools_path %>">Liste des Ecoles</a>
+	</li>
+	<li>
+		<a href="<%= tags_path %>">Liste des Tags</a>
+	</li>
+	<li>
+		<a href="<%= jobs_path %>">Liste des Métiers</a>
+	</li>
+</ul>
+<ul class="nav nav-sidebar">
+	<li>
+		<%= link_to "Se deconnecter", destroy_administrator_session_path, :method => :delete %>
+	</li>
+</ul>
+
+<% end %>

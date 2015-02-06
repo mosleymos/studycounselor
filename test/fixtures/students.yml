@@ -1,0 +1,59 @@
+# == Schema Information
+#
+# Table name: students
+#
+#  id                :integer          not null, primary key
+#  first_name        :string(255)
+#  last_name         :string(255)
+#  telephone         :string(255)
+#  age               :integer
+#  mail              :string(255)
+#  city              :string(255)
+#  etablissement     :string(255)
+#  previous_studies  :text
+#  filieres          :string(255)
+#  mean_grade        :integer
+#  father_profession :string(255)
+#  mother_profession :string(255)
+#  general_comment   :text
+#  first_letter      :string(255)
+#  research_name     :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  telephone: MyString
+  age: 1
+  mail: MyString
+  city: MyString
+  etablissement: MyString
+  previous_studies: MyText
+  filieres: MyString
+  mean_grade: 1
+  father_profession: MyString
+  mother_profession: MyString
+  general_comment: MyText
+  first_letter: MyString
+  research_name: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  telephone: MyString
+  age: 1
+  mail: MyString
+  city: MyString
+  etablissement: MyString
+  previous_studies: MyText
+  filieres: MyString
+  mean_grade: 1
+  father_profession: MyString
+  mother_profession: MyString
+  general_comment: MyText
+  first_letter: MyString
+  research_name: MyString
