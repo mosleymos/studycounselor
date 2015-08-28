@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  
   post 'messages/chat'
 
   resources :categories
@@ -16,8 +15,6 @@ Rails.application.routes.draw do
     end
   end
   
-  
-
   resources :rankings
 
   resources :leads
@@ -25,7 +22,6 @@ Rails.application.routes.draw do
   resources :cards
 
   resources :students
-  
   
   resources :counselors do
     resources :appointments
@@ -40,10 +36,6 @@ Rails.application.routes.draw do
    
   end
   
-
-  
- 
-
   resources :tags
 
   resources :jobs

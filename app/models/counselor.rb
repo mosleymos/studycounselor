@@ -62,6 +62,18 @@ class Counselor < ActiveRecord::Base
   has_many :questions, :through => :questionings
   
   
+  def age
+    return "22"
+  end
+  
+  def school_name
+    return "Supélec"
+  end
+  
+  def study_domain
+    return "Informatique"
+  end
+  
   def full_name
     return self.first_name.to_s + " " + self.last_name.to_s
   end

@@ -1,0 +1,78 @@
+<div class="counselor-card bg-white text-left">
+	<div class="col-xs-4">
+		<%= image_tag "counselor.jpg", class: "img-circle", style: "width: 120px; height: 120px;"%>
+	</div>
+	<div class="col-xs-8">
+		<h3 class="color-green"><%= link_to counselor.first_name, counselor%></h3>
+		<div>
+			<b><%= counselor.school_name%></b>
+		</div>
+		<div>
+			<%= counselor.age%>
+		</div>
+		<div>
+			<span class="level color-green">
+				<br class="visible-xs"/>
+				<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+		</div>
+	</div>
+
+	<div class="col-md-12 margin-top-10">
+
+		<div class="margin-top-10">
+			<div>
+				<strong class="text-uppercase">Domaine d'étude</strong>
+			</div>
+			<div>
+				<%= counselor.study_domain%>
+			</div>
+		</div>
+
+		<div class="margin-top-10">
+			<div>
+				<strong class="text-uppercase">Postes visés</strong>
+			</div>
+			<div>
+				<%= counselor.study_domain%>
+			</div>
+		</div>
+
+		<div class="margin-top-10">
+			<div>
+				<strong class="text-uppercase">Mention au Bac</strong>
+			</div>
+			<div>
+				<%= counselor.study_domain%>
+			</div>
+		</div>
+
+		<div class="margin-top-10">
+			<div>
+				<strong class="text-uppercase">Niveau d'études</strong>
+			</div>
+			<div>
+				<%= counselor.study_domain%>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-12">
+		<div class="text-center text-15 color-green">
+			"Vers l'infini et au dela"
+		</div>
+
+		<hr class="counselor-hr">
+	</div>
+
+	<div class="col-md-12">
+		<%= link_to "En savoir plus",  counselor, class: "btn btn-blue btn-block text-uppercase"%>
+	</div>
+	<div class="col-sm-6">
+		<%= link_to "Chatter",  counselor, class: "btn btn-green btn-block text-uppercase"%>
+
+	</div>
+	<div class="col-sm-6">
+		<%= link_to "Rendez-vous",  counselor, class: "btn btn-orange btn-block text-uppercase"%>
+	</div>
+
+</div>

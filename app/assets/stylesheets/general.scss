@@ -1,0 +1,72 @@
+@import 'colors';
+
+
+.text-15{
+  font-size: 1.2em;
+}
+
+.text-14{
+  font-size: 1.15em;
+}
+
+.text-13{
+  font-size: 1.10em;
+}
+
+
+.margin-top-10{
+  margin-top: 10px;
+}
+
+.margin-bottom-10{
+  margin-bottom: 10px;
+}
+
+.color-orange{
+  color: $sa-orange;
+}
+
+.color-green{
+  color: $sa-green;
+}
+
+.color-blue{
+  color: $sa-blue;
+}
+
+.color-white{
+  color: white;
+}
+
+.btn-orange{
+  color: white;
+  background-color: $sa-orange !important;
+}
+
+.btn-blue{
+  color: white;
+  background-color: $sa-blue !important;
+}
+
+.btn-green{
+  color: white;
+  background-color: $sa-green !important;
+}
+
+.bg-green{
+  background-color: $sa-green;
+}
+.bg-orange{
+  background-color: $sa-orange;
+}
+.bg-blue{
+  background-color: $sa-blue;
+}
+
+.bg-lightgreen{
+  background-color: $sa-lightgreen;
+}
+
+.bg-white{
+  background-color: white;
+}

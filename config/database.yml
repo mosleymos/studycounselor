@@ -8,7 +8,7 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: firstgenerator
+  database: studycounselor
   pool:     5
   username: blogtracker
   password:
@@ -36,7 +36,7 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: firstgenerator
+  database: studycounselor
   pool:     5
   username: blogtracker
   password:
@@ -46,7 +46,7 @@ production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: firstgenerator
+  database: studycounselor
   pool:     5
   username: blogtracker
   password:
