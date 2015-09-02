@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115114038) do
+ActiveRecord::Schema.define(version: 20150828165158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,6 +114,14 @@ ActiveRecord::Schema.define(version: 20150115114038) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.hstore   "social_url"
+    t.string   "school_name"
+    t.string   "moto"
+    t.string   "study_domain"
+    t.string   "high_school"
+    t.string   "looking_job"
+    t.string   "bac_mention"
+    t.string   "study_level"
+    t.string   "study_financing"
   end
 
   add_index "counselors", ["email"], name: "index_counselors_on_email", unique: true, using: :btree
@@ -176,6 +184,7 @@ ActiveRecord::Schema.define(version: 20150115114038) do
     t.integer  "price"
     t.text     "perspectives_description"
     t.text     "pedagogy_description"
+    t.text     "fees"
   end
 
   add_index "programs", ["name"], name: "index_programs_on_name", using: :btree
@@ -235,6 +244,9 @@ ActiveRecord::Schema.define(version: 20150115114038) do
     t.text     "facebook_url"
     t.text     "youtube_url"
     t.text     "linkedin_url"
+    t.string   "student_number"
+    t.text     "photos_videos"
+    t.text     "fees"
   end
 
   create_table "students", force: true do |t|

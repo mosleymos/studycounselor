@@ -33,6 +33,14 @@
 #  confirmation_sent_at      :datetime
 #  unconfirmed_email         :string(255)
 #  social_url                :hstore
+#  school_name               :string(255)
+#  moto                      :string(255)
+#  study_domain              :string(255)
+#  high_school               :string(255)
+#  looking_job               :string(255)
+#  bac_mention               :string(255)
+#  study_level               :string(255)
+#  study_financing           :string(255)
 #
 
 require 'test_helper'

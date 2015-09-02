@@ -23,6 +23,9 @@
 #  facebook_url      :text
 #  youtube_url       :text
 #  linkedin_url      :text
+#  student_number    :string(255)
+#  photos_videos     :text
+#  fees              :text
 #
 
 class School < ActiveRecord::Base

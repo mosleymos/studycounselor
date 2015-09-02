@@ -21,6 +21,7 @@
 #  price                    :integer
 #  perspectives_description :text
 #  pedagogy_description     :text
+#  fees                     :text
 #
 
 class Program < ActiveRecord::Base

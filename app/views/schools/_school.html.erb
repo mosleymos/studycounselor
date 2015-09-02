@@ -1,10 +1,31 @@
-<section class="about section">
-	<div class="section-inner">
-		<%= image_tag school.avatar, :class => "profile-image img-responsive pull-left", :alt => "Job image", :style => "width: 200px;"%>
-		<div>
-			<h2><%= link_to school.name, school %></h2>
-			<p><%= school.description %></p>
-			<p>Nombre de programmes : <%= school.programs.size %></p>
-		</div>
+<div class="school-card bg-white text-left col-md-12">
+	<div class="col-md-3">
+		<%= image_tag school.avatar, :class => "profile-image img-responsive pull-left", :alt => "Job image", :style => "max-width: 300px; width: 100%;"%>
 	</div>
-</section>
+	<div class="col-md-4">
+		<h2><%= link_to school.name, school %></h2>
+		<div>
+			<strong class="text-uppercase">Formations proposées</strong>
+			<p>
+				<%= school.programs.pluck(:name).join(', ')%>
+			</p>
+		</div>
+		<div>
+			<strong class="text-uppercase">Nombre d'étudiants</strong>
+			<p>
+				<%= school.student_number%>
+			</p>
+		</div>
+		<div>
+			<strong class="text-uppercase">Localisation</strong>
+			<p>
+				<%= school.address%>
+			</p>
+		</div>
+
+	</div>
+	<div class="col-md-5">
+		<%= school.description.html_safe%>
+	</div>
+
+</div>
