@@ -12,8 +12,19 @@
 
 <div class="container sections-wrapper">
 	<div class="row">
+         <!--============== SCHOOL SEARCH ================= -->
+
+              <div class="col-md-6">
+                  <h3>Filtre de recherche</h3>
+                        <%= render partial: "school_search" %>
+              </div>
+
+         <!--============== end SCHOOL SEARCH ================= -->
+              <div class="col-md-6">
 		
 			<%= render partial: "school", collection: @schools %>
+              </div>
+
 		
 	</div>
 </div>

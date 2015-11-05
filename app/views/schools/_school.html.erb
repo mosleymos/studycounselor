@@ -1,6 +1,7 @@
 <div class="school-card bg-white text-left col-md-12">
 	<div class="col-md-3">
 		<%= image_tag school.avatar, :class => "profile-image img-responsive pull-left", :alt => "Job image", :style => "max-width: 300px; width: 100%;"%>
+                <h5>Nombre d'advisors:</h5>
 	</div>
 	<div class="col-md-4">
 		<h2><%= link_to school.name, school %></h2>
@@ -22,10 +23,11 @@
 				<%= school.address%>
 			</p>
 		</div>
+                <%= link_to "Voir la fiche école", @school , class:"btn btn-lg center" %>
 
 	</div>
 	<div class="col-md-5">
-		<%= school.description.html_safe%>
+                <p class="school-description"><%= school.description %></p>
 	</div>
 
 </div>
