@@ -2,5 +2,9 @@
 	<div class="container-fluid text-center">
                 <h5>Study Holiday by Study Quizz 2015 Tous droits reservés</h5>
                 <h5>Contact-CGU-CGV-Mentions légales</h5>
+								<%= link_to "Sign in", new_counselor_session_path  %>
+								<%= link_to "Sign up", new_counselor_registration_path  %>
+								<%= link_to "Log out", destroy_counselor_session_path, method: :delete %>
+								
 	</div>
 </div>

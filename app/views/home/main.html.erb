@@ -14,7 +14,7 @@
 -->
 
 <!-- ================= DROPDOWN MENU  ================= --> 
-<h3 class="text-uppercase color-white">Je veux faire une école de</h3>
+<h3 class="text-uppercase color-white">Une filière d'étude en tête</h3>
 
 <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -50,32 +50,7 @@
 </div>
 
 
-<div class="row bg-white">
-        <div class="container marketing">
-			<h2 class="text-center text-uppercase color-green">Mode d'emploi</h2>
-                        <h3 class="text-ceter text-uppercase color-green">Bénéficiez de l'expérience d'un étudiant sur les formations qui vous inspirent</h3>
-
-                         <div class="col-md-4 text-center">
-                              <h5>Des profils qui vous correspondent</h5>
-                             <p>Sélectionnez le profil qui vous ressemble... Par école, secteur d'activité ou centre d'intérêt. Il y en a pour tous les goûts !</p>
-                         </div>
-
-                         <div class="col-md-4 text-center">
-                              <h5>Rentrez en contact</h5>
-                             <p>Communiquez par chat et demandez à vous faire rappeler quand vous le souhaitez. Ni CPE, ni coachs autoproclamés dans notre réseau, promis !</p>
-                         </div>
-
-                         <div class="col-md-4 text-center">
-                              <h5>Décrochez</h5>
-                             <p>...Et la discussion s'engage naturellement autour de vos questions d'orientation. Aucunes questions taboues !</p>
-                         </div>
-
-
-        </div>
-
-
-</div>
-
+  <%= render partial:'marketing_info' %>
 
 <div class="row marketing studyquizz-theme">
 	<h2 class="color-white text-uppercase text-center">Les questions les plus fréquentes</h2>
@@ -138,6 +113,15 @@
 
 <div class="row marketing bg-white">
 	<h2 class="color-green text-uppercase text-center">Nos top advisors !</h2>
+
+	<div class="row">
+					<% @counselors.each do |c| %>
+					<div class="col-md-4">
+									<%= render partial: "counselors/counselor_card", locals:{counselor: c} %>
+					</div>
+
+		<% end %>
+	</div>
 </div>
 
 <div class="row studyquizz-theme">
@@ -173,70 +157,15 @@
 
 <div class="row bg-white">
 
-	<h2 class="color-green text-uppercase text-center">Témoignages</h2>
+      <div class="col-md-12">
 
-        <div class="col-md-12">
+			<%= render partial:'testimonies_carrousel' %>
 
 
+       <div class="row marketing studyquizz-theme">
+				 <%= render partial: 'press_marketing' %>	
+       </div>
 
-<!-- Carousel
-================================================== -->
-<div id="myCarousel" class="carousel slide">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="http://placehold.it/1500X500" class="img-responsive">
-      <div class="container">
-        <div class="carousel-caption">
-        </div>
-      </div>
     </div>
-    <div class="item">
-      <img src="http://placehold.it/1500X500" class="img-responsive">
-      <div class="container">
-        <div class="carousel-caption">
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://placehold.it/1500X500" class="img-responsive">
-      <div class="container">
-        <div class="carousel-caption">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="icon-next"></span>
-  </a>  
-</div>
-<!-- /.carousel -->
-<div class="row marketing studyquizz-theme">
-	<h2 class="color-white text-uppercase text-center">La presse</h2>
-
-        <div class="col-md-6">
-               <h5 class="color-white">Study Quizz - s'orienter autrement:</h5>
-               <p class="color-white">En terminale, nos users nous disent clairement que ce n'est pas le bac qui occupe leur pensée mais bien ce qu'ils vont faire par la suite... Study Adavisor propose une alternative aux sempiternels salons ou forums où chaque école vient de vendre sa soupe: les bacheliers consultent les profils d'étudiants inscrits dans les filières qu'ils ciblent, et peuvent se faire rappeler en un clic pour une discussion libre... A suivre de très près !</p>
-        </div>
-
-        <div class="col-md-6">
-               <h5 class="color-white">Le Figaro - Révolutionnaire: Plateforme d'orientation 2.0!</h5>
-               <p class="color-white">Study Advisor est une nouvelle plateforme qui met en relation des étudiants avec des futurs bacheliers en fonction des filières visées. La combinaison est la suivante: nouveau moyen d'information pour les terminales, petit boulot pour les étudiants, et communication novatrice pour les acteurs de l'éducation... Un modèle audacieux dont on a hâte de vérifier la pertinence pour chacune des parties !</p>
-        </div>
-
-</div>
-
-
-
-        </div>
 
 </div>

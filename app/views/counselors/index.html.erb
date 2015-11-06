@@ -1,36 +1,26 @@
 
 
 <div class="row bg-lightgreen marketing">
-	<h3 class="color-green text-uppercase text-center">Rentrez en contact avec nos advisors pour bénéficier de leur retour d'expérience</h3>
+
+	<%= render 'home/marketing_info' %>
+
 	<div class="container text-center">
 		<div class="col-md-12 marketing">
-			<%= link_to "Mode d'emploi", "#", class: "btn btn-blue text-uppercase"%>
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					 Choisir 
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu centered" aria-labelledby="dropdownMenu1">
+						<li><a href="#">Ingénieur</a></li>
+						<li><a href="#">Commerce</a></li>
+						<li><a href="#">Arts</a></li>
+					</ul>
+				</div>
+
+
 		</div>
 		
-		<div class="col-md-4">
-				<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				<h3 class="color-green">Gratuit</h3>
-				<p>
-					Il n'y a rien à payer pour bien s'orienter 
-				</p>
-				
-			</div><!-- /.col-lg-4 -->
-			<div class="col-md-4">
-				<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				<h3 class="color-green">Personnalisé</h3>
-				<p>
-					Une discussion par rapport à tes questions et envies
-				</p>
-				
-			</div><!-- /.col-lg-4 -->
-			<div class="col-md-4">
-				<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-				<h3 class="color-green">Simple</h3>
-				<p>
-					Nos advisors te délivrent leur expérience d'il y a moins de 5 ans
-				</p>
-				
-			</div><!-- /.col-lg-4 -->
 	</div>
 </div>
 
