@@ -8,7 +8,7 @@
 			<b><%= counselor.school_name%></b>
 		</div>
 		<div>
-			<%= counselor.age%>
+			<%= counselor.age%> ans
 		</div>
 		<div>
 			<span class="level color-green">
@@ -39,6 +39,16 @@
 
 		<div class="margin-top-10">
 			<div>
+				<strong class="text-uppercase">Lycée</strong>
+			</div>
+			<div>
+				<%= counselor.study_domain%>
+			</div>
+		</div>
+
+
+		<div class="margin-top-10">
+			<div>
 				<strong class="text-uppercase">Mention au Bac</strong>
 			</div>
 			<div>
@@ -57,7 +67,7 @@
 	</div>
 
 	<div class="col-md-12">
-		<div class="text-center text-15 color-green">
+		<div class="text-center text-15 studyquizz-blockquote">
 			"Vers l'infini et au dela"
 		</div>
 
@@ -72,7 +82,7 @@
 
 	</div>
 	<div class="col-sm-6">
-		<%= link_to "Rendez-vous",  counselor, class: "btn btn-orange btn-block text-uppercase"%>
+		<%= link_to "Rendez-vous",  new_counselor_appointment_path(counselor.id), class: "btn btn-orange btn-block text-uppercase"%>
 	</div>
 
 </div>
