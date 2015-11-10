@@ -6,15 +6,16 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="intro-message">
-						<h1 class="text-uppercase color-white">La 1ère plateforme d'orientation post-bac</h1>
-						<h3 class="color-white">Des conseils pour bien s'orienter en toute simplicité. Echangez avec des étudiants qui connaissent les formations pour profiter de leur vécu</h3>
+						<h1 class="text-uppercase color-white studyquizz-title-main">Orientation Post-Bac</h1>
+						<h1 class="text-uppercase color-white studyquizz-title-main">entre étudiants</h1>
+						<h3 class="color-white studyquizz-search-filiere">La 1ère plateforme d'orientation qui vous met en relation avec l'étudiant de la filière ou de l'école de votre choix pour avoir de <u>vraies</u> réponses à vos questions.</h3>
 
 <!--
 						<hr class="intro-divider">
 -->
 
 <!-- ================= DROPDOWN MENU  ================= --> 
-<h3 class="text-uppercase color-white">Une filière d'étude en tête</h3>
+<h3 class="text-uppercase color-white">Une filière d'études en tête ?</h3>
 
 <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -22,9 +23,22 @@
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu centered" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Arts/Culture</a></li>
+    <li><a href="#">Audiovisuel</a></li>
+    <li><a href="#">BTS Indistruel</a></li>
+    <li><a href="#">BTS Tertiaire</a></li>
+    <li><a href="#">Commerce, Gestion</a></li>
+    <li><a href="#">Droit</a></li>
     <li><a href="#">Ingénieur</a></li>
-    <li><a href="#">Commerce</a></li>
-    <li><a href="#">Arts</a></li>
+    <li><a href="#">Médical</a></li>
+    <li><a href="#">Paramédical et social</a></li>
+    <li><a href="#">Sciences Politiques</a></li>
+    <li><a href="#">Prépa Ingénieurs</a></li>
+    <li><a href="#">Prépa HEC</a></li>
+    <li><a href="#">Université</a></li>
+    <li><a href="#">Je ne sais pas</a></li>
+    <li><a href="#">Autres</a></li>
+
   </ul>
 </div>
 
@@ -132,19 +146,23 @@
 			<h2 class="text-center text-uppercase color-white">Study Advisor: Qui de mieux qu'un étudiant pour répondre à vos questions d'orientation ?</h2>
 			<br / >
 			<div class="col-lg-4">
-				<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+
+							<%= image_tag("pictogramme-FREE.png", size: "140x140", alt: "Generic placeholder image") %>
 				<h3 class="color-white">Gratuit</h3>
 				<p class="color-white">Il n'y a rien a payer pour bien s'orienter. Pas même l'appel puisqu'il est pris en charge par nos Advisors, soigneusement sélectionnés.</p>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
-				<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+
+							<%= image_tag("Pictogramme-Bonhomme.png", size: "140x140", alt: "Generic placeholder image") %>
+
 				<h3 class="color-white">Personnalisé</h3>
 				<p class="color-white">Vous choisissez le profil qui vous correspond. Vous précisez quand vous faire rappeler. Vous posez des questions.</p>
 
 			</div><!-- /.col-lg-4 -->
 
 			<div class="col-lg-4">
-				<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+
+							<%= image_tag("Pictogramme-doigts.png", size: "140x140", alt: "Generic placeholder image") %>
 				<h3 class="color-white">Simple</h3>
 				<p class="color-white">Donnez vos disponibilités et faites vous rappeler pour bénéficier d'une discussion de qualité le parcours visé.</p>
 			</div><!-- /.col-lg-4 -->
