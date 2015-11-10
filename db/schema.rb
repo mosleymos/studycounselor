@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828165158) do
+ActiveRecord::Schema.define(version: 20151110114813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(version: 20150828165158) do
     t.string   "bac_mention"
     t.string   "study_level"
     t.string   "study_financing"
+    t.hstore   "availability"
   end
 
   add_index "counselors", ["email"], name: "index_counselors_on_email", unique: true, using: :btree
@@ -267,6 +268,8 @@ ActiveRecord::Schema.define(version: 20150828165158) do
     t.string   "research_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "study_geo_location"
+    t.text     "student_info_channel"
   end
 
   create_table "studyings", force: true do |t|
