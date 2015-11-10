@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.for(:sign_up) << :general_description
 		devise_parameter_sanitizer.for(:sign_up) << :school_description
 		devise_parameter_sanitizer.for(:sign_up) << :availibility_description
+		devise_parameter_sanitizer.for(:sign_up) << :availibility
 	end
   
   def after_sign_in_path_for(resource)
