@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'contacts/message'
+
   post 'messages/chat'
 
   resources :categories
