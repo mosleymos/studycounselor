@@ -5,6 +5,9 @@
 								<%= link_to "Sign in", new_counselor_session_path  %>
 								<%= link_to "Sign up", new_counselor_registration_path  %>
 								<%= link_to "Log out", destroy_counselor_session_path, method: :delete %>
+
+								<%= link_to "Admin-login", new_administrator_session_path  %>
+								<%= link_to "Admin-log-out", destroy_administrator_session_path(method: :delete)  %>
 								
 	</div>
 </div>
