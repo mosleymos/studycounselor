@@ -25,6 +25,13 @@
 class Student < ActiveRecord::Base
   
   has_many :cards
+	validates :first_name, :presence => true 
+	validates :age, :presence => true 
+	validates :mail, :presence => true 
+	validates :city, :presence => true 
+	validates :etablissement, :presence => true 
+	validates :filieres, :presence => true 
+	validates :general_comment, :presence => true 
   
   
   def to_param
