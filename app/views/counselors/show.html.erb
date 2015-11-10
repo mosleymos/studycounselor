@@ -1,5 +1,14 @@
+<div class="container detailled-card">
+				<div class="row">
+								<div class="col-md-12">
+												<%= render partial:"counselors/counselor_detailled_card", locals:{counselor: @counselor} %> 
+								</div>
+				</div>
 
-    <%= render partial: "counselors/presentation/counselor_header", locals:{counselor: @counselor, description: "Page de profil du conseiller" } %>
+</div>
+
+<!--
+    <%# render partial: "counselors/presentation/counselor_header", locals:{counselor: @counselor, description: "Page de profil du conseiller" } %>
     
     <div class="container sections-wrapper">
         <div class="row">
@@ -8,7 +17,7 @@
                     <div class="section-inner">
                         <h2 class="heading">A propos de moi</h2>
                         <div class="content">
-                            <%= @counselor.general_description.to_s.html_safe%>
+                            <%# @counselor.general_description.to_s.html_safe%>
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
@@ -22,7 +31,7 @@
                                 
                                     
                                 <div class="desc text-left">  
-                                	<%= @counselor.school_description.to_s.html_safe %>                                  
+                                	<%# @counselor.school_description.to_s.html_safe %>                                  
                                 </div><!--//desc-->         
                             </div><!--//item-->
                             <hr class="divider" />
@@ -94,8 +103,8 @@
                         <h2 class="heading sr-only">Basic Information</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                                <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span><%= @counselor.address %></li>
-                                <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><%= @counselor.email %></li>
+                                <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span><%# @counselor.address %></li>
+                                <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><%# @counselor.email %></li>
                                 
                             </ul>
                         </div><!--//content-->  
@@ -191,7 +200,7 @@
                 <aside class="blog aside section">
                     <div class="section-inner">
                         <h2 class="heading">Disponibilités</h2>
-                        <p><%= @counselor.availibility_description.to_s.html_safe %></p>
+                        <p><%# @counselor.availibility_description.to_s.html_safe %></p>
                     </div><!--//section-inner-->
                 </aside><!--//section-->
                 
@@ -199,7 +208,7 @@
                     <div class="section-inner">
                         <h2 class="heading">Tags associés</h2>
                         <% @counselor.tags.each do |tag| %>
-                        <p><%= link_to tag.name, tag%></p>
+                        <p><%# link_to tag.name, tag%></p>
                         <% end%>
                     </div><!--//section-inner-->
                 </aside><!--//section-->
@@ -208,7 +217,7 @@
                     <div class="section-inner">
                         <h2 class="heading">Catégories associées</h2>
                         <% @counselor.categories.each do |category| %>
-                        <p><%= link_to category.name, category%></p>
+                        <p><%# link_to category.name, category%></p>
                         <% end%>
                     </div><!--//section-inner-->
                 </aside><!--//section-->
@@ -218,7 +227,7 @@
             </div><!--//secondary-->    
         </div><!--//row-->
     </div><!--//masonry-->
-    
+-->    
     
 <script>
 	$(function() {
