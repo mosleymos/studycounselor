@@ -57,6 +57,14 @@ gem 'pusher'
 gem 'uuid'
 gem 'json'
 
+## Mori Gem for development
+
+gem 'mailcatcher'
+gem 'chronic'
+gem 'hirb'
+gem 'awesome_print'
+gem 'quiet_assets'
+
 ## APPLICATION GEMS
 
 
@@ -73,3 +81,4 @@ gem 'json'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+ gem 'pry'
