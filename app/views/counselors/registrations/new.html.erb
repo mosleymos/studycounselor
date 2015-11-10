@@ -80,6 +80,16 @@
 					</div>
 
 					<div class="form-group">
+						<h5>Vos disponibilités:</h5>
+				     <br>	
+						 <% $DAYS.each do |day| %>
+							 <% $HOURS.each do |hour| %>
+									 <input type="checkbox" name="availability[<%= day %>][]" value="<%= hour %>">
+								<% end %>
+								<br>
+							<% end %>
+					</div>
+					<div class="form-group">
 						<%= f.label :password %>
 						<br />
 						<%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
