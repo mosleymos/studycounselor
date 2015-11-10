@@ -46,6 +46,12 @@
             </li>
           </ul>
 			<ul class="nav navbar-nav navbar-right">
+							<% if not counselor_signed_in? %>
+											<li><%= link_to "Sign in", new_counselor_session_path %></li>
+							<% end %>
+							<% if counselor_signed_in? %>
+											<li><%= link_to "Sign out", destroy_counselor_session_path, method: :delete %></li><% end %>
+
 				<li class="facebook-bg"><a href="https://www.facebook.com/rebbleit" target="_blank"><i class="fa fa-facebook"></i></a></li>
 				<li class="twitter-bg"><a href="https://twitter.com/rebble_it"  target="_blank"><i class="fa fa-twitter"></i></a></li>
 				<li class="google-plus-bg"><a href="https://plus.google.com/+RebbleIt"  target="_blank"><i class="fa fa-google-plus"></i></a></li>
