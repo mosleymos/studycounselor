@@ -10,6 +10,8 @@
 #  counselor_id         :integer
 #  created_at           :datetime
 #  updated_at           :datetime
+#  future_study_choice  :string(255)
+#  careers_interest     :string(255)
 #
 
 class Card < ActiveRecord::Base
@@ -25,8 +27,9 @@ class Card < ActiveRecord::Base
    @programs_list || self.programs.pluck(:name).join(",")
   end 
   
-  def schools
-    []
+  def schools(student_id)
+		list_of_schools  = Student.find(student_id).schools
+		list_of_schools.gsub(/\,/, '   ').split(' ').to_a.uniq.map{ |elem| School.find(elem).name }
   end
   
 end

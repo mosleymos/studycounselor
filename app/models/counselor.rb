@@ -41,6 +41,14 @@
 #  bac_mention               :string(255)
 #  study_level               :string(255)
 #  study_financing           :string(255)
+#  availability              :hstore
+#  lundi                     :string(255)
+#  mardi                     :string(255)
+#  mercredi                  :string(255)
+#  jeudi                     :string(255)
+#  vendredi                  :string(255)
+#  samedi                    :string(255)
+#  dimanche                  :string(255)
 #
 
 class Counselor < ActiveRecord::Base
@@ -58,6 +66,7 @@ class Counselor < ActiveRecord::Base
   
   # For social interaction
   store_accessor :social_url, :facebook_url, :twitter_url, :linkedin_url, :google_plus_url
+
   
   
   has_many :appointments
@@ -68,7 +77,14 @@ class Counselor < ActiveRecord::Base
   
   has_many :questionings
   has_many :questions, :through => :questionings
-  
+
+	serialize :lundi
+	serialize :mardi
+	serialize :mercredi
+	serialize :jeudi
+	serialize :vendredi
+	serialize :samedi
+	serialize :dimanche
   
   def age
     return "22"
