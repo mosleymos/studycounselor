@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+	get 'availability' =>  'counselors#advisor_availability'
+	post 'register_availability' => 'counselors#register_advisor_availability'
   
   get 'contacts/message'
 
