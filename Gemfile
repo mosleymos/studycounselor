@@ -64,6 +64,8 @@ gem 'chronic'
 gem 'hirb'
 gem 'awesome_print'
 gem 'quiet_assets'
+gem 'byebug'
+gem 'dotenv-rails'
 
 ## APPLICATION GEMS
 
