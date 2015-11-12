@@ -1,5 +1,6 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy, :programs, :program_edit]
+	before_action :authenticate_school!, only: [:edit, :update, :destroy, :programs, :program_edit]
   layout :set_layout
   # GET /schools
   # GET /schools.json
