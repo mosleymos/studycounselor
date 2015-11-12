@@ -1,0 +1,67 @@
+<div class="container">
+        <div class="row">
+								<div class="col-md-4">
+												<%= @counselor_availabilities.each do |day|	 %>
+																<% unserialize(day).each do |dispo_heure| %>
+																				<%= dispo_heure %>
+																<%end%>
+												<%end%>
+								</div>
+
+								<div class="col-md-8">
+									
+								<%= form_tag 'register_availability', :method => :post , :multipart => true do %>
+									<div class="form-group">
+													<%= hidden_field_tag 'counselor', @counselor %>
+
+														<h5>Vos disponibilités:</h5>
+														<h6>Lundi</h6>
+															<%= $HOURS.each do |hour| %>
+																			<%= check_box_tag 'lundi[]', hour %>
+															<% end %>
+														<br>
+
+														<h6>Mardi</h6>
+															<%= $HOURS.each do |hour| %>
+																			<%= check_box_tag 'mardi[]', hour %>
+															<% end %>
+														<br>
+
+														<h6>Mercredi</h6>
+															<%= $HOURS.each do |hour| %>
+																			<%= check_box_tag 'mercredi[]', hour %>
+															<% end %>
+														<br>
+														<h6>Jeudi</h6>
+															<%= $HOURS.each do |hour| %>
+																			<%= check_box_tag 'jeudi[]', hour %>
+															<% end %>
+														<br>
+
+														<h6>Vendredi</h6>
+															<%= $HOURS.each do |hour| %>
+																			<%= check_box_tag 'vendredi[]', hour %>
+															<% end %>
+														<br>
+
+														<h6>Samedi</h6>
+															<%= $HOURS.each do |hour| %>
+																<%= check_box_tag 'samedi[]', hour %>
+															<% end %>
+														<br>
+
+														<h6>Dimanche</h6>
+															<%= $HOURS.each do |hour| %>
+																	<%= check_box_tag 'dimanche[]', hour %>
+															<% end %>
+														<br>
+
+										<%= submit_tag "Enregistrer" %>
+
+										<% end %>							
+												
+								</div>
+        </div>
+</div>
+
+

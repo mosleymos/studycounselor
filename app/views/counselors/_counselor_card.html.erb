@@ -8,7 +8,7 @@
 			<b><%= counselor.school_name%></b>
 		</div>
 		<div>
-			<%= counselor.age%> ans
+			<%= counselor.age %> ans
 		</div>
 		<div>
 			<span class="level color-green">
@@ -74,6 +74,8 @@
 		<hr class="counselor-hr">
 	</div>
 
+	<% if not current_counselor %>
+
 	<div class="col-md-12">
 		<%= link_to "En savoir plus",  counselor, class: "btn btn-blue btn-block text-uppercase"%>
 	</div>
@@ -84,5 +86,7 @@
 	<div class="col-sm-6">
 		<%= link_to "Rendez-vous",  new_counselor_appointment_path(counselor.id), class: "btn btn-orange btn-block text-uppercase"%>
 	</div>
+
+	<% end %>
 
 </div>
