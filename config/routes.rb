@@ -52,7 +52,11 @@ Rails.application.routes.draw do
       get 'programs'
       get 'program_edit'
     end
+		collection do
+			devise_for :schools  
+		end
   end
+	
 
   root to: 'home#main'
   get 'home/main'
