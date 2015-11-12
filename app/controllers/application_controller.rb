@@ -23,6 +23,13 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.for(:sign_up) << :school_description
 		devise_parameter_sanitizer.for(:sign_up) << :availibility_description
 		devise_parameter_sanitizer.for(:sign_up) << :availibility
+		devise_parameter_sanitizer.for(:sign_up) << :lundi
+		devise_parameter_sanitizer.for(:sign_up) << :mardi
+		devise_parameter_sanitizer.for(:sign_up) << :mercredi
+		devise_parameter_sanitizer.for(:sign_up) << :jeudi
+		devise_parameter_sanitizer.for(:sign_up) << :vendredi
+		devise_parameter_sanitizer.for(:sign_up) << :samedi
+		devise_parameter_sanitizer.for(:sign_up) << :dimanche
 	end
   
   def after_sign_in_path_for(resource)
