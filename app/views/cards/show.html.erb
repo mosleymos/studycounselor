@@ -45,11 +45,10 @@
 				<div class="section-inner">
 					<h2 class="heading">Les Ecoles conseillées</h2>
 					<div class="content">
-						<% @card.schools.each do |school| %>
+						<%= @card.schools(@card.student) %>
 						<p>
-							<%= link_to school.name, school %>
+							<%# link_to school.name, school %>
 						</p>
-						<% end %>
 					</div><!--//content-->
 				</div><!--//section-inner-->
 			</section><!--//section-->
