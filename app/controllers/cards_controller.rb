@@ -28,6 +28,17 @@ class CardsController < ApplicationController
   # POST /cards.json
   def create
     @card = Card.new(card_params)
+		@student = Student.find(params[:card][:student_id]) 
+		if @student.schools.nil?
+		   @student.schools = params[:card][:programs_list].to_s  
+		   @student.save!
+		else
+			info = @student.schools  
+			info += ' ' +  params[:card][:programs_list].to_s
+			@student.schools = info
+		  @student.save!
+
+		end
 
     respond_to do |format|
       if @card.save
@@ -72,6 +83,6 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:appointment_datetime, :comment_text, :avaibility_text, :student_id, :counselor_id)
+      params.require(:card).permit(:appointment_datetime, :comment_text, :avaibility_text, :student_id, :counselor_id, :programs_list)
     end
 end
