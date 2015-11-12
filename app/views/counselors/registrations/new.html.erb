@@ -81,13 +81,45 @@
 
 					<div class="form-group">
 						<h5>Vos disponibilités:</h5>
-				     <br>	
-						 <% $DAYS.each do |day| %>
-							 <% $HOURS.each do |hour| %>
-									 <input type="checkbox" name="availability[<%= day %>][]" value="<%= hour %>">
-								<% end %>
-								<br>
+						<%= f.label :lundi %>	
+					    <%= $HOURS.each do |hour| %>
+											<%= check_box_tag 'lundi[]', hour %>
 							<% end %>
+						<br>
+
+						<%= f.label :mardi %>	
+					    <%= $HOURS.each do |hour| %>
+											<%= check_box_tag 'mardi[]', hour %>
+							<% end %>
+						<br>
+						<%= f.label :mercredi %>	
+					    <%= $HOURS.each do |hour| %>
+											<%= check_box_tag 'mercredi[]', hour %>
+							<% end %>
+						<br>
+						<%= f.label :jeudi %>	
+					    <%= $HOURS.each do |hour| %>
+											<%= check_box_tag 'jeudi[]', hour %>
+							<% end %>
+						<br>
+
+						<%= f.label :vendredi %>	
+					    <%= $HOURS.each do |hour| %>
+											<%= check_box_tag 'vendredi[]', hour %>
+							<% end %>
+						<br>
+						<%= f.label :samedi %>	
+					    <%= $HOURS.each do |hour| %>
+											<%= check_box_tag 'samedi[]', hour %>
+							<% end %>
+						<br>
+
+						<%= f.label :dimanche %>	
+					    <%= $HOURS.each do |hour| %>
+											<%= check_box_tag 'dimanche[]', hour %>
+							<% end %>
+						<br>
+
 					</div>
 					<div class="form-group">
 						<%= f.label :password %>
