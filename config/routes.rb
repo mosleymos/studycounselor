@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
+
 	get 'availability' =>  'counselors#advisor_availability'
 	post 'register_availability' => 'counselors#register_advisor_availability'
+
+	#post message
+	post 'contacts/send_message' => 'contacts#send_message'
   
   get 'contacts/message'
 
@@ -52,11 +56,8 @@ Rails.application.routes.draw do
       get 'programs'
       get 'program_edit'
     end
-		collection do
-			devise_for :schools  
-		end
   end
-	
+
 
   root to: 'home#main'
   get 'home/main'
