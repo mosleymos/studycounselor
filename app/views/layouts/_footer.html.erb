@@ -4,7 +4,9 @@
 								<h5><%= link_to "Contact", contacts_message_path %></h5>
                 <h5>CGU-CGV-Mentions légales</h5>
 								<%= link_to "Admin-login", new_administrator_session_path  %>
-								<%= link_to "Admin-log-out", destroy_administrator_session_path(method: :delete)  %>
+								<%= link_to "Admin-log-out", destroy_administrator_session_path, method: :delete  %>
+								<h5>Deconnexio</h5>
+								<%= link_to "Representative-log-out", destroy_representative_session_path  %>
 								
 	</div>
 </div>
