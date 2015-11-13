@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   protected
 
 	def configure_permitted_parameters
+		# Parametres pour study
 		devise_parameter_sanitizer.for(:sign_up) << :first_name
 		devise_parameter_sanitizer.for(:sign_up) << :last_name
 		devise_parameter_sanitizer.for(:sign_up) << :birthdate
@@ -30,6 +31,8 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.for(:sign_up) << :vendredi
 		devise_parameter_sanitizer.for(:sign_up) << :samedi
 		devise_parameter_sanitizer.for(:sign_up) << :dimanche
+
+	
 	end
   
   def after_sign_in_path_for(resource)
