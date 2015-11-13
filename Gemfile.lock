@@ -50,7 +50,7 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     daemons (1.2.3)
-    devise (3.4.1)
+    devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -207,7 +207,7 @@ DEPENDENCIES
   carrierwave
   chronic
   coffee-rails (~> 4.0.0)
-  devise
+  devise (~> 3.5.2)
   dotenv-rails
   exception_notification
   font-awesome-rails

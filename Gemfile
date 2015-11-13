@@ -48,7 +48,8 @@ gem 'sitemap_generator'
 # For tag input
 gem 'tagsinput-rails'
 
-gem 'devise'
+gem 'devise', '~> 3.5.2'
+
 # For the uploading image on the server
 gem 'carrierwave'
 
