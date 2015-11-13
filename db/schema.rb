@@ -233,6 +233,11 @@ ActiveRecord::Schema.define(version: 20151112222436) do
   add_index "rankings", ["counselor_id"], name: "index_rankings_on_counselor_id", using: :btree
   add_index "rankings", ["student_id"], name: "index_rankings_on_student_id", using: :btree
 
+  create_table "representatives", force: true do |t|
+    t.integer  "sign_in_count",   default: 0, null: false
+    t.datetime "last_sign_in_at"
+  end
+
   create_table "schools", force: true do |t|
     t.text     "name"
     t.text     "description"
@@ -258,7 +263,6 @@ ActiveRecord::Schema.define(version: 20151112222436) do
     t.text     "photos_videos"
     t.text     "fees"
     t.string   "email"
-    t.string   "encrypted_password"
   end
 
   create_table "students", force: true do |t|

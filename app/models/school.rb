@@ -46,11 +46,6 @@ class School < ActiveRecord::Base
   
   has_many :programs
 
-	#Devise model
-  devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable
-  
-  
   
   # To display the image.default if null or empty
   def avatar
