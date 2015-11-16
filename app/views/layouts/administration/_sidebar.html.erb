@@ -21,7 +21,7 @@
 		<%= link_to "Mes rendez vous",  counselor_appointments_path(current_counselor.id) %>
 		<span><%= current_counselor.appointments.count %></span>
 	</li>
-	<li><%= link_to "Mes disponibilités", availability_path %></li>
+	<li><%# link_to "Mes disponibilités", availability_path %></li>
 
 	<li>
 	<%= link_to "Ensemble de vos cards remplies ", cards_counselor_path(current_counselor) %>
