@@ -1,6 +1,6 @@
-<% if counselor_signed_in?%>
+<% if counselor_signed_in? %>
 
-<p><%= current_counselor.full_name%></p>
+<p><%= current_counselor.full_name %></p>
 <ul class="nav nav-sidebar">
 	<li class="active">
 		<%= link_to "Dashboard", profile_counselor_path(current_counselor) %>
@@ -9,7 +9,7 @@
 		<%= link_to "Réglages", edit_counselor_path(current_counselor) %>
 	</li>
 	<li>
-		<%= link_to "Votre profil public", current_counselor%>
+		<%= link_to "Votre profil public", counselor_path %>
 	</li>
 	
 </ul>
@@ -71,5 +71,28 @@
 		<%= link_to "Se deconnecter", destroy_administrator_session_path, :method => :delete %>
 	</li>
 </ul>
+
+<% elsif representative_signed_in? %>
+
+<ul class="nav nav-sidebar">
+  <li>
+		<%# link_to "Dashboard",  representatives_dashboard_path %>
+	</li>
+
+	<li>
+		<%= link_to "Mes écoles",  "#" %>
+	</li>
+	<li>
+		<%= link_to "Mes leads", "#" %>
+	</li>
+
+	<li>
+		<%= link_to "Mon profil", "#" %>
+	</li>
+	<li>
+		<%= link_to "Se deconnecter", "#", :method => :delete %>
+	</li>
+</ul>
+
 
 <% end %>
