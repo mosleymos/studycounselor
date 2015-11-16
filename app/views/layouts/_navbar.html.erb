@@ -25,7 +25,7 @@
 			<li class="active nadvence-family"><%= link_to "Dashboard Counselor", dashboard_counselor_path(current_counselor) %></li>
 
 			<% elsif representative_signed_in? %>
-			<li class="active nadvence-family"><%= link_to "Dashboard Representative", '#'%></li>
+			<li class="active nadvence-family"><%= link_to "Dashboard Representative", dashboard_representative_path(current_representative) %></li>
 
 			<% else %>
 										<li class="nadvence-family"><%= link_to "Devenir advisor", new_counselor_registration_path %></li>
