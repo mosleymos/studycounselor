@@ -4,19 +4,21 @@
 								<h5><%= link_to "Contact", contacts_message_path %></h5>
                 <h5>CGU-CGV-Mentions légales</h5>
 								<% if administrator_signed_in? %>
-								<%= link_to "Admin-log-out", destroy_administrator_session_path, method: :delete  %>
+												<%= link_to "Admin-log-out", destroy_administrator_session_path, method: :delete  %>
+								<% else %>
+												<%= link_to "Admin-login", new_administrator_session_path  %>
+												<%= link_to "Admin-", new_administrator_registration_path  %>
 								<% end %>
 
-								<% if administrator_signed_in? == false %>
-								<%= link_to "Admin-login", new_administrator_session_path  %>
-								<% end %>
 
 								<h5>Deconnexio</h5>
 								<%if representative_signed_in? %>
-								<%= link_to "Representative-log-out", destroy_representative_session_path  %>
+								<%= link_to "Representative-log-out", destroy_representative_session_path, method: :delete  %>
+								<%# link_to "Representative-dashboard", representatives_dashboard_path(current_representative.id)  %>
+
 								<% end %>
 								<%if representative_signed_in? == false %>
-								<%= link_to "Representative-log-in", new_representative_session_path  %>
+								<%= link_to "Representative-log-in", "/representatives/representatives/sign_in" %>
 								<%= link_to "Representative-Sign-up", new_representative_registration_path  %>
 								<% end %>
 

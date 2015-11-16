@@ -18,16 +18,27 @@
 
 			</li>
 			<% elsif administrator_signed_in? %>
+
 			<li class="active nadvence-family"><%= link_to "Dashboard Admin", dashboard_administrator_path(current_administrator) %></li>
+
+			<% elsif counselor_signed_in? %>
+			<li class="active nadvence-family"><%= link_to "Dashboard Counselor", dashboard_counselor_path(current_counselor) %></li>
+
+			<% elsif representative_signed_in? %>
+			<li class="active nadvence-family"><%= link_to "Dashboard Representative", '#'%></li>
+
 			<% else %>
+										<li class="nadvence-family"><%= link_to "Devenir advisor", new_counselor_registration_path %></li>
             
-            <% end %>
+			<% end %>
             
             <li class="nadvence-family"><%= link_to "Advisors", counselors_path%></li>
             
             <li class="nadvence-family"><%= link_to "Etablissements", schools_path %></li>
-            
-            <li class="nadvence-family"><%= link_to "Devenir advisor", new_counselor_registration_path %></li>
+
+
+
+
 <!--- 
             <li class="dropdown nadvence-family">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Autres <span class="caret"></span></a>
