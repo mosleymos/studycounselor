@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
 
+	# Gestion des erreurs
+  get 'not_found' => 'error#not_found'
+
+  get 'server_error' => 'error#server_error'
+
+
+  #get 'representatives/dashboard'
+
+	
+	resources :representatives do
+					collection do 
+									devise_for :representatives do
+										get '/representatives/dashboard' => 'representatives#dashboard'
+										get '/representatives/sign_in' => 'devise/sessions#new'
+										delete '/representatives/sign_out' => 'devise/sessions#destroy'
+									end
+					end
+	end
 
 	get 'availability' =>  'counselors#advisor_availability'
 	post 'register_availability' => 'counselors#register_advisor_availability'
@@ -44,7 +62,7 @@ Rails.application.routes.draw do
     end
    
   end
-  
+
   resources :tags
 
   resources :jobs
