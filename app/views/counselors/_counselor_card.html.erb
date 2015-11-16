@@ -1,6 +1,6 @@
 <div class="counselor-card bg-white text-left">
 	<div class="col-xs-4">
-		<%= image_tag "counselor.jpg", class: "img-circle", style: "width: 120px; height: 120px;"%>
+		<%= show_counselor_avatar(counselor) %>
 	</div>
 	<div class="col-xs-8">
 		<h3 class="color-green"><%= link_to counselor.first_name, counselor%></h3>
@@ -33,7 +33,7 @@
 				<strong class="text-uppercase">Postes visés</strong>
 			</div>
 			<div>
-				<%= counselor.study_domain%>
+				<%= counselor.looking_job %>
 			</div>
 		</div>
 
@@ -42,7 +42,7 @@
 				<strong class="text-uppercase">Lycée</strong>
 			</div>
 			<div>
-				<%= counselor.study_domain%>
+				<%= counselor.high_school%>
 			</div>
 		</div>
 
@@ -52,7 +52,7 @@
 				<strong class="text-uppercase">Mention au Bac</strong>
 			</div>
 			<div>
-				<%= counselor.study_domain%>
+				<%= counselor.bac_mention %>
 			</div>
 		</div>
 
@@ -61,7 +61,7 @@
 				<strong class="text-uppercase">Niveau d'études</strong>
 			</div>
 			<div>
-				<%= counselor.study_domain%>
+				<%= counselor.study_level %>
 			</div>
 		</div>
 	</div>
