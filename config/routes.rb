@@ -12,10 +12,12 @@ Rails.application.routes.draw do
 	resources :representatives do
 					collection do 
 									devise_for :representatives do
-										get '/representatives/dashboard' => 'representatives#dashboard'
 										get '/representatives/sign_in' => 'devise/sessions#new'
 										delete '/representatives/sign_out' => 'devise/sessions#destroy'
 									end
+					end
+					member do 
+						get 'dashboard' => 'representatives#dashboard'
 					end
 	end
 
