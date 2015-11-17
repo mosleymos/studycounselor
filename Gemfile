@@ -70,6 +70,7 @@ gem 'dotenv-rails'
 
 ## APPLICATION GEMS
 
+gem 'mailjet' # in order to send email
 
 
 
