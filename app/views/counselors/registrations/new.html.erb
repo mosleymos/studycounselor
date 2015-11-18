@@ -80,11 +80,20 @@
 						<%= f.text_field :high_school , :class => "form-control" %>
 					</div>
 
+		<div class="form-group">
+						<%= f.label :bac_type, "Bac" %>
+						<br>
+						<%= f.select :bac_type,["L","ES", "S", "SMTG", "Pro", "Autres"] , :class => "form-control" %>
+					</div>
+
+
+
 					<div class="form-group">
 						<%= f.label :bac_mention, "Mention au bac" %>
 						<br>
 						<%= f.select :bac_mention,["Non","AB", "B", "TB"] , :class => "form-control" %>
 					</div>
+
 
 					<div class="form-group">
 						<%= f.label :study_level, "Niveau d'études" %>
