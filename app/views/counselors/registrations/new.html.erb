@@ -29,59 +29,85 @@
 					</div>
 
 					<div class="form-group">
-						<%= f.label :email %>
+						<%= f.label :email, "Votre email" %>
 						<br />
 						<%= f.email_field :email, autofocus: true, :class => "form-control" %>
 					</div>
 
 					<div class="form-group">
-						<%= f.label :first_name %>
+						<%= f.label :first_name, "Votre prénom:" %>
 						<br>
 						<%= f.text_field :first_name, :class => "form-control" %>
 					</div>
 					<div class="form-group">
-						<%= f.label :last_name %>
+						<%= f.label :last_name, "Votre nom:" %>
 						<br>
 						<%= f.text_field :last_name, :class => "form-control" %>
 					</div>
 					<div class="form-group">
-						<%= f.label :birthdate %>
+						<%= f.label :birthdate, "Votre date de naissance:" %>
 						<br>
 						<%= f.date_select :birthdate, :start_year => 1970, :class => "form-control" %>
 					</div>
 					
 					<div class="form-group">
-						<%= f.label :telephone %>
+						<%= f.label :telephone, "Votre portable:" %>
 						<br>
 						<%= f.text_field :telephone, :class => "form-control" %>
 					</div>
-					
+
 					<div class="form-group">
-						<%= f.label :address, "Address" %>
+						<%= f.label :moto, "Ma devise" %>
+						<br>
+						<%= f.text_field :moto , :class => "form-control" %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :address, "Votre adresse" %>
 						<br>
 						<%= f.text_area :address, :class => "form-control" %>
 					</div>
 					
 					<div class="form-group">
-						<%= f.label :general_description %>
+						<%= f.label :general_description, "Description générale:" %>
 						<br>
 						<%= f.text_area :general_description, :class => "form-control summernote" %>
 					</div>
-					
+	
 					<div class="form-group">
-						<%= f.label :school_description  %>
+						<%= f.label :high_school, "Lycée" %>
+						<br>
+						<%= f.text_field :high_school , :class => "form-control" %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :bac_mention, "Mention au bac" %>
+						<br>
+						<%= f.select :bac_mention,["Non","AB", "B", "TB"] , :class => "form-control" %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :study_level, "Niveau d'études" %>
+						<br>
+						<%= f.select :study_level,["Bac","Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"] , :class => "form-control" %>
+					</div>
+
+				
+					<div class="form-group">
+						<%= f.label :school_description, "Qui j'étais en terminale ?" %>
 						<br>
 						<%= f.text_area :school_description , :class => "form-control summernote" %>
 					</div>
 					
+					
 					<div class="form-group">
-						<%= f.label :jobs_description  %>
+						<%= f.label :jobs_description, "Mon parcours académique jusqu'içi:"  %>
 						<br>
 						<%= f.text_area :jobs_description , :class => "form-control summernote" %>
 					</div>
 					
 					<div class="form-group">
-						<%= f.label :availibility_description %>
+						<%= f.label :availibility_description, "Ce à quoi je me destine:" %>
 						<br>
 						<%= f.text_area :availibility_description, :class => "form-control summernote" %>
 					</div>
