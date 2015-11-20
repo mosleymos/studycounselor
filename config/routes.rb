@@ -82,7 +82,9 @@ Rails.application.routes.draw do
   root to: 'home#main'
   get 'home/main'
   get 'home/connexion'
-  get 'home/test'
+  
+	# Route pour tester connexion au chat
+  # get 'home/test'
 
 # The priority is based upon order of creation: first created -> highest priority.
 # See how all your routes lay out with "rake routes".
