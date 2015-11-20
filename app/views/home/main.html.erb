@@ -10,73 +10,34 @@
 						<h1 class="text-uppercase color-white studyquizz-title-main">entre étudiants</h1>
 						<h3 class="color-white studyquizz-search-filiere">La 1ère plateforme d'orientation qui vous met en relation avec l'étudiant de la filière ou de l'école de votre choix pour avoir de <u>vraies</u> réponses à vos questions.</h3>
 
-<!--
-						<hr class="intro-divider">
--->
+						<h3 class="text-uppercase color-white">Une filière d'études en tête ?</h3>
 
-<!-- ================= DROPDOWN MENU  ================= --> 
-<h3 class="text-uppercase color-white">Une filière d'études en tête ?</h3>
+						<%= render partial: 'home/dropdown_menu' %>
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-   Choisir 
-    <span class="caret"></span>
-  </button>
-					<ul class="dropdown-menu dropdown-centered" aria-labelledby="dropdownMenu1">
-									<li><a href="#">Arts/Culture</a></li>
-									<li><a href="#">Audiovisuel</a></li>
-									<li><a href="#">BTS Indistruel</a></li>
-									<li><a href="#">BTS Tertiaire</a></li>
-									<li><a href="#">Commerce, Gestion</a></li>
-									<li><a href="#">Droit</a></li>
-									<li><a href="#">Ingénieur</a></li>
-									<li><a href="#">Médical</a></li>
-									<li><a href="#">Paramédical et social</a></li>
-									<li><a href="#">Sciences Politiques</a></li>
-									<li><a href="#">Prépa Ingénieurs</a></li>
-									<li><a href="#">Prépa HEC</a></li>
-									<li><a href="#">Université</a></li>
-									<li><a href="#">Je ne sais pas</a></li>
-									<li><a href="#">Autres</a></li>
-
-					</ul>
- </div>
-
-<!-- ================= DROPDOWN MENU end  ================= --> 
-
-<!--
-						<ul class="list-inline intro-social-buttons">
-							<li>
-								<a href="#" class="btn btn-primary btn-lg"><span class="network-name">Mode d'emploi</span></a>
-							</li>
-
-						</ul>
--->
 					</div>
 				</div>
 			</div>
-
+		
 		</div>
 		<!-- /.container -->
-
-	</div>
-
+	</div>	
 </div>
 
 
-  <%= render partial:'marketing_info' %>
+<%= render partial:'marketing_info' %>
 
 <div class="row marketing studyquizz-theme">
 	<h2 class="color-white text-uppercase text-center">Les questions les plus fréquentes</h2>
+	
 	<div class="col-md-12 text-center">
 		<div class="col-md-4">
 			<div class="color-white">
-                                Sciences Pô ou Prépa, je ne sais pas quoi choisir !?
+				Sciences Pô ou Prépa, je ne sais pas quoi choisir !?
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="color-white">
-                                Je veux devenir riche... quelle filière choisir ?
+				Je veux devenir riche... quelle filière choisir ?
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -84,74 +45,43 @@
 				Quelle école choisir de commerce pour s'assurer d'un emploi à la sortie ?
 			</div>
 		</div>
-	
 	</div>
 	
 	<div class="col-md-12 text-center margin-top-10">
 		<div class="col-md-4">
 			<div class="color-white">
-                                Je veux participer au développement de GTA VI, quelle école choisir ?
+				Je veux participer au développement de GTA VI, quelle école choisir ?
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="color-white">
-                               La Jungle des BTS: comment s'y retrouver ?
+				La Jungle des BTS: comment s'y retrouver ?
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="color-white">
-                              Je suis en Term, et aucune idée de quoi faire l'année prochaine... l'enfer.
+				Je suis en Term, et aucune idée de quoi faire l'année prochaine... l'enfer.
 			</div>
 		</div>
 	</div>
 
-<div class="centered text-center">
+	<div class="centered text-center">
 
-<!-- ================= DROPDOWN MENU  ================= --> 
-<h3 class="text-uppercase color-white">Une filière d'études en tête ?</h3>
+		<h3 class="text-uppercase color-white">Une filière d'études en tête ?</h3>
 
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-   Choisir 
-    <span class="caret"></span>
-  </button>
-					<ul class="dropdown-menu dropdown-centered" aria-labelledby="dropdownMenu1">
-									<li><a href="#">Arts/Culture</a></li>
-									<li><a href="#">Audiovisuel</a></li>
-									<li><a href="#">BTS Indistruel</a></li>
-									<li><a href="#">BTS Tertiaire</a></li>
-									<li><a href="#">Commerce, Gestion</a></li>
-									<li><a href="#">Droit</a></li>
-									<li><a href="#">Ingénieur</a></li>
-									<li><a href="#">Médical</a></li>
-									<li><a href="#">Paramédical et social</a></li>
-									<li><a href="#">Sciences Politiques</a></li>
-									<li><a href="#">Prépa Ingénieurs</a></li>
-									<li><a href="#">Prépa HEC</a></li>
-									<li><a href="#">Université</a></li>
-									<li><a href="#">Je ne sais pas</a></li>
-									<li><a href="#">Autres</a></li>
-
-					</ul>
- </div>
-
-<!-- ================= DROPDOWN MENU end  ================= --> 
-
-
+		<%= render partial:"home/dropdown_menu" %>
+	</div>
 
 </div>
 
-
-</div>
 <div class="row marketing bg-white">
 	<h2 class="color-green text-uppercase text-center">Nos top advisors</h2>
 
 	<div class="row">
-					<% @counselors.each do |c| %>
-					<div class="col-md-4">
-									<%= render partial: "counselors/counselor_card", locals:{counselor: c} %>
-					</div>
-
+		<% @counselors.each do |c| %>
+		<div class="col-md-4">
+			<%= render partial: "counselors/counselor_card", locals:{counselor: c} %>
+		</div>
 		<% end %>
 	</div>
 </div>
@@ -165,13 +95,13 @@
 			<br / >
 			<div class="col-lg-4">
 
-							<%= image_tag("pictogramme-FREE.png", size: "140x140", alt: "Generic placeholder image") %>
+				<%= image_tag("pictogramme-FREE.png", size: "140x140", alt: "Generic placeholder image") %>
 				<h3 class="color-white">Gratuit</h3>
 				<p class="color-white">Il n'y a rien a payer pour bien s'orienter. Pas même l'appel puisqu'il est pris en charge par nos Advisors, soigneusement sélectionnés.</p>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 
-							<%= image_tag("Pictogramme-Bonhomme.png", size: "140x140", alt: "Generic placeholder image") %>
+				<%= image_tag("Pictogramme-Bonhomme.png", size: "140x140", alt: "Generic placeholder image") %>
 
 				<h3 class="color-white">Personnalisé</h3>
 				<p class="color-white">Vous choisissez le profil qui vous correspond. Vous précisez quand vous faire rappeler. Vous posez des questions.</p>
@@ -180,7 +110,7 @@
 
 			<div class="col-lg-4">
 
-							<%= image_tag("Pictogramme-doigts.png", size: "140x140", alt: "Generic placeholder image") %>
+				<%= image_tag("Pictogramme-doigts.png", size: "140x140", alt: "Generic placeholder image") %>
 				<h3 class="color-white">Simple</h3>
 				<p class="color-white">Donnez vos disponibilités et faites vous rappeler pour bénéficier d'une discussion de qualité le parcours visé.</p>
 			</div><!-- /.col-lg-4 -->
@@ -190,18 +120,14 @@
 	</div>
 </div>
 
-
 <div class="row bg-white">
+	<div class="col-md-12">
 
-      <div class="col-md-12">
+		<%= render partial:'testimonies_carrousel' %>
 
-			<%= render partial:'testimonies_carrousel' %>
+		<div class="row marketing studyquizz-theme">
+			<%= render partial: 'press_marketing' %>	
+		</div>
 
-
-       <div class="row marketing studyquizz-theme">
-				 <%= render partial: 'press_marketing' %>	
-       </div>
-
-    </div>
-
+	</div>
 </div>
