@@ -1,27 +1,27 @@
+<div class="container section-wrapper">
+	
+	<div class="row bg-lightgreen marketing">
 
+		<%= render 'home/marketing_info' %>
 
-<div class="row bg-lightgreen marketing">
-
-	<%= render 'home/marketing_info' %>
-
-	<div class="container text-center">
-		<div class="col-md-12 marketing">
-				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-					 Choisir 
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu dropdown-centered" aria-labelledby="dropdownMenu1">
-						<li><a href="#">Ingénieur</a></li>
-						<li><a href="#">Commerce</a></li>
-						<li><a href="#">Arts</a></li>
-					</ul>
-				</div>
-
-
+		<div class="container text-center">
+			<div class="col-md-12 marketing">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						 Choisir 
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu dropdown-centered" aria-labelledby="dropdownMenu1">
+							<li><a href="#">Ingénieur</a></li>
+							<li><a href="#">Commerce</a></li>
+							<li><a href="#">Arts</a></li>
+						</ul>
+					</div>
+			</div>
+			
 		</div>
-		
 	</div>
+
 </div>
 
 <div class="container sections-wrapper">
@@ -33,9 +33,8 @@
 		<% end %>
 	</div>
 </div>
+<div class="division"></div>
 
-
-<br>
 <% if current_administrator %>
 <%= link_to 'New Counselor', new_counselor_path, :class => "btn btn-success" %>
 <% end %>
