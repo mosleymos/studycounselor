@@ -87,15 +87,7 @@ class Counselor < ActiveRecord::Base
 	serialize :dimanche
   
   def age
-    return "22"
-  end
-  
-  def school_name
-    return "Supélec"
-  end
-  
-  def study_domain
-    return "Informatique"
+    Time.now.year - self.birthdate.year 
   end
   
   def full_name
@@ -114,8 +106,5 @@ class Counselor < ActiveRecord::Base
   def to_param
     "#{id}-#{full_name}".parameterize
   end
-  
-  
-  
   
 end
