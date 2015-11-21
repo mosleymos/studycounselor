@@ -24,6 +24,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       #respond_with(@contact)
+			ContactMailer.sample_mail(@contact).deliver
       redirect_to root_path, notice:"Votre message a été envoyé" 
 		else
       redirect_to root_path, notice:"Votre message n'a été envoyé" 

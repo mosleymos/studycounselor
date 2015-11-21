@@ -30,7 +30,7 @@
 		<div class="form-group">
 			<%= f.label :birthdate, "Date de naissance" %>
 			<br>
-			<%= f.date_select :birthdate, class: "form-control", start_year: 1980, end_year: 1995 %>
+			<%= f.date_select :birthdate, class: "form-control", start_year: 1985, end_year: 1998 %>
 		</div>
 		<div class="form-group">
 			<%= f.label :email, "Email" %>
@@ -118,13 +118,20 @@
 		<div class="form-group">
 			<%= f.label :bac_mention, "Mention au bac" %>
 			<br>
-			<%= f.select :bac_mention,["Non","AB", "B", "TB"] , :class => "form-control" %>
+			<%= f.select :bac_mention,$BAC_MENTIONS , :class => "form-control" %>
 		</div>
 		<div class="form-group">
-			<%= f.label :study_level, "Niveau d'études" %>
+			<%= f.label :study_level, "Années d'études" %>
 			<br>
 			<%= f.select :study_level,["Bac","Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"] , :class => "form-control" %>
 		</div>
+
+    <div class="form-group">
+			<%= f.label :etablissement, "Votre établissement actuel" %>
+			<br>
+			<%= f.select :etablissement, Etablissement.all_etablissement_name, :class => "form-control" %>
+		</div>
+
 		<div class="form-group">
 			<%= f.label :study_financing, "Financement" %>
 			<br>
@@ -211,26 +218,6 @@
 
 	</div>
 </section>
-
-<section class="about section">
-	<div class="section-inner">
-
-		<h2 class="page-header">Catégories et Tags</h2>
-
-		<div class="form-group">
-			<%= f.label :categories_list, "Les catégories dans lesquelles vous êtes compétents", :class => 'control-label' %>
-			<div class="controls">
-				<%= f.text_field :categories_list, :placeholder => "Les catégories", :id =>"form-field-tags" %>
-				<span class="help-block">Liste des catégories dans lesquelles vous êtes qualifiés</span>
-			</div>
-		</div>
-
-		<div class="form-group">
-			<%= f.label :tags_list, "Tags associés" %>
-			<br>
-			<%= f.text_field :tags_list, class: "form-control", :id => "taginput" %>
-		</div>
-
 		<div class="form-group text-center">
 			<%= f.submit "Mettre à jour le profil", class: "btn btn-success btn-lg" %>
 		</div>

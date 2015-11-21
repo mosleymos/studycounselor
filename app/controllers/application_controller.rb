@@ -5,8 +5,9 @@ class ApplicationController < ActionController::Base
   $DAYS=['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
 	$HOURS=(9..23).to_a
 	$BAC_TYPE = ["L","ES", "S", "SMTG", "Pro", "Autres"] 
-	$BAC_MENTIONS = ["Non","AB", "B", "TB"]
+	$BAC_MENTIONS = ["Passable","AB", "B", "TB"]
 	$STUDY_LEVEL = ["Bac","Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"]
+  $STUDY_DOMAINS = ['Commerce', 'Ingenieur']
 
   #before_filter :set_locale
 	

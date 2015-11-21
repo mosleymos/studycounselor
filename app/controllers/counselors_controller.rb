@@ -102,7 +102,7 @@ class CounselorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def counselor_params
-      params.require(:counselor).permit(:first_name, :last_name, :birthdate, :image_url, :email, :telephone, :address, :approved_by_administrator, :facebook_url, :twitter_url, :linkedin_url, :google_plus_url, :general_description, :bac_type,  :school_description, :jobs_description, :availibility_description, :tags_list, :categories_list, :school_name, :moto, :study_domain, :high_school, :looking_job, :bac_mention, :study_level, :study_financing, :lundi, :mardi, :mercredi, :jeudi, :vendredi, :samedi, :dimanche, :counselor_id) 
+      params.require(:counselor).permit(:first_name, :last_name, :birthdate, :image_url, :email, :telephone, :address, :approved_by_administrator, :facebook_url, :twitter_url, :linkedin_url, :google_plus_url, :general_description, :bac_type,  :school_description, :jobs_description, :availibility_description, :tags_list, :categories_list, :school_name, :moto, :study_domain, :high_school, :looking_job, :bac_mention, :study_level, :study_financing, :lundi, :mardi, :mercredi, :jeudi, :vendredi, :samedi, :dimanche, :counselor_id, :etablissement) 
     end
     
     def set_layout

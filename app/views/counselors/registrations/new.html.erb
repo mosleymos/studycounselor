@@ -46,7 +46,7 @@
 					<div class="form-group">
 						<%= f.label :birthdate, "Votre date de naissance:" %>
 						<br>
-						<%= f.date_select :birthdate, :start_year => 1980, :end_year => 1995, :required => true, :class => "form-control" %>
+						<%= f.date_select :birthdate, :start_year => 1985, :end_year => 1998, :required => true, :class => "form-control" %>
 					</div>
 					
 					<div class="form-group">
@@ -79,10 +79,17 @@
 						<%= f.text_field :high_school , :class => "form-control", :placeholder => 'Le nom de votre lycée' %>
 					</div>
 
-		<div class="form-group">
+					<div class="form-group">
 						<%= f.label :bac_type, "Bac" %>
 						<br>
 						<%= f.select :bac_type, $BAC_TYPE, :class => "form-control", :required => true %>
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label :etablissement, "Votre établissement actuel" %>
+						<br>
+						<%= f.select :etablissement, Etablissement.all_etablissement_name , :class => "form-control", :required => true %>
 					</div>
 
 
@@ -100,6 +107,18 @@
 						<%= f.select :study_level, $STUDY_LEVEL , :class => "form-control", :required => true %>
 					</div>
 
+					<div class="form-group">
+						<%= f.label :study_domain, "Domaine d'études" %>
+						<br>
+						<%= f.select :study_domain, $STUDY_DOMAINS , :class => "form-control", :required => true %>
+					</div>
+	
+					<div class="form-group">
+						<%= f.label :job_target, "Poste visé"  %>
+						<br>
+						<%= f.text_field :job_target , :placeholder => "Quel est le poste que je souhaite atteindre", :class =>"input-group" %>
+					</div>
+
 				
 					<div class="form-group">
 						<%= f.label :school_description, "Qui j'étais en terminale ?" %>
@@ -113,6 +132,7 @@
 						<br>
 						<%= f.text_area :jobs_description , :class => "form-control summernote" %>
 					</div>
+					
 					
 					<div class="form-group">
 						<%= f.label :availibility_description, "Ce à quoi je me destine:" %>
