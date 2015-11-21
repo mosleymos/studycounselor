@@ -3,9 +3,7 @@ class RepresentativesController < ApplicationController
   # before_action :authenticate_representative!, only: [:dashboard]
 
   def dashboard
-    @schools = School.all
-    @cards = Card.all
-    @lead = Lead.all
+    @schools = School.where(representative_id: current_representative.id) 
   end
 
   private
