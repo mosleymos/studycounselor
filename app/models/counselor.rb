@@ -85,6 +85,10 @@ class Counselor < ActiveRecord::Base
 	serialize :vendredi
 	serialize :samedi
 	serialize :dimanche
+	
+	# Validations
+	
+	validates :first_name, :last_name, :birthdate,:address , :telephone, :bac_type, :high_school, :study_domain,  presence: true
   
   def age
     Time.now.year - self.birthdate.year 
