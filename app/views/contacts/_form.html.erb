@@ -1,0 +1,34 @@
+<h2 class="page-header">Formulaire de contact</h2>
+<%= form_for(@contact, :class => "form-group")  do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group">
+    <%= f.label :name, "Votre nom" %><br>
+		<%= f.text_field :name , :placeholder => 'Votre nom et prenom', :required => true %>
+  </div>
+  <div class="input-group">
+    <%= f.label :subject,  "Sujet de votre email"%><br>
+    <%= f.text_field :subject, :placeholder => 'Sujet de votre mail', :required => true %>
+  </div>
+  <div class="input-group">
+    <%= f.label :email, "Votre email" %><br>
+    <%= f.text_field :email, :placeholder => 'Entrez votre email', :required => true %>
+  </div>
+  <div class="input-group">
+    <%= f.label :message %><br>
+    <%= f.text_area :message, :placeholder => 'Entrez votre message', :required => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Envoi de votre message" %>
+  </div>
+<% end %>
