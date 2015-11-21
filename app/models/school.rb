@@ -26,6 +26,8 @@
 #  student_number    :string(255)
 #  photos_videos     :text
 #  fees              :text
+#  email             :string(255)
+#  representative_id :integer
 #
 
 class School < ActiveRecord::Base
