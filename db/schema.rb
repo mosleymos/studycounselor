@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121002922) do
+ActiveRecord::Schema.define(version: 20151121094708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -293,7 +293,10 @@ ActiveRecord::Schema.define(version: 20151121002922) do
     t.text     "photos_videos"
     t.text     "fees"
     t.string   "email"
+    t.integer  "representative_id"
   end
+
+  add_index "schools", ["representative_id"], name: "index_schools_on_representative_id", using: :btree
 
   create_table "students", force: true do |t|
     t.string   "first_name"
