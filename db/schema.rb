@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118051225) do
+ActiveRecord::Schema.define(version: 20151121002922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,15 @@ ActiveRecord::Schema.define(version: 20151118051225) do
 
   add_index "categorizings", ["categorizable_id", "categorizable_type"], name: "index_categorizings_on_categorizable_id_and_categorizable_type", using: :btree
   add_index "categorizings", ["category_id"], name: "index_categorizings_on_category_id", using: :btree
+
+  create_table "contacts", force: true do |t|
+    t.string   "name"
+    t.string   "subject"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "counselors", force: true do |t|
     t.string   "first_name"

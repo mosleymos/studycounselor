@@ -1,6 +1,5 @@
 <header class="header">
 	<div class="container">
-		<img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="James Lee" />
 		<div class="profile-content pull-left">
 			<h1 class="name">Espace Conseillers: Inscription</h1>
 			<h2 class="desc">Devenez un conseiller pour Study Counselor</h2>
@@ -16,7 +15,7 @@
 			<section class="about section">
 				<div class="section-inner">
 
-					<h2>Sign up</h2>
+					<h2>S'inscrire</h2>
 
 					<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 					<%= devise_error_messages! %>
@@ -29,43 +28,43 @@
 					</div>
 
 					<div class="form-group">
-						<%= f.label :email, "Votre email" %>
+									<%= f.label :email, "Votre email" %>
 						<br />
-						<%= f.email_field :email, autofocus: true, :class => "form-control" %>
+						<%= f.email_field :email, autofocus: true, :class => "form-control", :required => true,   :placeholder => 'Entrez votre email' %>
 					</div>
 
 					<div class="form-group">
 						<%= f.label :first_name, "Votre prénom:" %>
 						<br>
-						<%= f.text_field :first_name, :class => "form-control" %>
+						<%= f.text_field :first_name, :class => "form-control", :required => true, :placeholder => 'Entrez votre prénom' %>
 					</div>
 					<div class="form-group">
 						<%= f.label :last_name, "Votre nom:" %>
 						<br>
-						<%= f.text_field :last_name, :class => "form-control" %>
+						<%= f.text_field :last_name, :class => "form-control", :required => true, :placeholder => 'Entrez votre nom' %>
 					</div>
 					<div class="form-group">
 						<%= f.label :birthdate, "Votre date de naissance:" %>
 						<br>
-						<%= f.date_select :birthdate, :start_year => 1980, :end_year => 1995, :class => "form-control" %>
+						<%= f.date_select :birthdate, :start_year => 1980, :end_year => 1995, :required => true, :class => "form-control" %>
 					</div>
 					
 					<div class="form-group">
 						<%= f.label :telephone, "Votre portable:" %>
 						<br>
-						<%= f.text_field :telephone, :class => "form-control" %>
+						<%= f.text_field :telephone, :class => "form-control", :placeholder => 'Entrez votre numéro de téléphone', :required => true %>
 					</div>
 
 					<div class="form-group">
 						<%= f.label :moto, "Ma devise" %>
 						<br>
-						<%= f.text_field :moto , :class => "form-control" %>
+						<%= f.text_field :moto , :class => "form-control",  :placeholder => 'Quelle est votre devise' %>
 					</div>
 
 					<div class="form-group">
 						<%= f.label :address, "Votre adresse" %>
 						<br>
-						<%= f.text_area :address, :class => "form-control" %>
+						<%= f.text_area :address, :class => "form-control" ,  :placeholder => 'Où vous habitez ?' , :required => true %>
 					</div>
 					
 					<div class="form-group">
@@ -77,13 +76,13 @@
 					<div class="form-group">
 						<%= f.label :high_school, "Lycée" %>
 						<br>
-						<%= f.text_field :high_school , :class => "form-control" %>
+						<%= f.text_field :high_school , :class => "form-control", :placeholder => 'Le nom de votre lycée' %>
 					</div>
 
 		<div class="form-group">
 						<%= f.label :bac_type, "Bac" %>
 						<br>
-						<%= f.select :bac_type,["L","ES", "S", "SMTG", "Pro", "Autres"] , :class => "form-control" %>
+						<%= f.select :bac_type, $BAC_TYPE, :class => "form-control", :required => true %>
 					</div>
 
 
@@ -91,14 +90,14 @@
 					<div class="form-group">
 						<%= f.label :bac_mention, "Mention au bac" %>
 						<br>
-						<%= f.select :bac_mention,["Non","AB", "B", "TB"] , :class => "form-control" %>
+						<%= f.select :bac_mention, $BAC_MENTIONS , :class => "form-control", :required => true %>
 					</div>
 
 
 					<div class="form-group">
 						<%= f.label :study_level, "Niveau d'études" %>
 						<br>
-						<%= f.select :study_level,["Bac","Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"] , :class => "form-control" %>
+						<%= f.select :study_level, $STUDY_LEVEL , :class => "form-control", :required => true %>
 					</div>
 
 				
@@ -166,13 +165,13 @@
 					<div class="form-group">
 						<%= f.label :password %>
 						<br />
-						<%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+						<%= f.password_field :password, autocomplete: "off", :class => "form-control", :required => true %>
 					</div>
 
 					<div class="form-group">
 						<%= f.label :password_confirmation %>
 						<br />
-						<%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+						<%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :required => true %>
 					</div>
 
 					<div class="form-group">

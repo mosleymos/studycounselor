@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
 	# Gestion des erreurs
   get 'not_found' => 'error#not_found'
 
@@ -24,10 +25,6 @@ Rails.application.routes.draw do
 	get 'availability' =>  'counselors#advisor_availability'
 	post 'register_availability' => 'counselors#register_advisor_availability'
 
-	#post message
-	post 'contacts/send_message' => 'contacts#send_message'
-  
-  get 'contacts/message'
 
   post 'messages/chat'
 
@@ -78,6 +75,8 @@ Rails.application.routes.draw do
     end
   end
 
+
+  resources :contacts, only: [:new, :create]
 
   root to: 'home#main'
   get 'home/main'
