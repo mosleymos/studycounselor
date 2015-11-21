@@ -29,6 +29,8 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
 		@student = Student.find(params[:card][:student_id]) 
+
+		# TODO: Refactor this logic to the model
 		if @student.schools.nil?
 		   @student.schools = params[:card][:programs_list].to_s  
 		   @student.save!
@@ -37,7 +39,6 @@ class CardsController < ApplicationController
 			info += ' ' +  params[:card][:programs_list].to_s
 			@student.schools = info
 		  @student.save!
-
 		end
 
     respond_to do |format|

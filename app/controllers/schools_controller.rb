@@ -1,5 +1,6 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy, :programs, :program_edit]
+	before_action :authenticate_representative!, only: [:new,:edit , :update, :destroy]
   layout :set_layout
   # GET /schools
   # GET /schools.json
@@ -23,6 +24,7 @@ class SchoolsController < ApplicationController
   # GET /schools/new
   def new
     @school = School.new
+		@representative = current_representative.id
   end
 
   # GET /schools/1/edit
@@ -86,7 +88,7 @@ class SchoolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def school_params
-      params.require(:school).permit(:name, :email, :description, :goals, :moto, :image_url, :address, :school_url, :telephone, :contact_mail, :statistics_text, :twitter_url, :facebook_url, :linkedin_url, :youtube_url, :tags_list, :categories_list)
+      params.require(:school).permit(:name, :email, :description, :goals, :moto, :image_url, :address, :school_url, :telephone, :contact_mail, :statistics_text, :twitter_url, :facebook_url, :linkedin_url, :youtube_url, :tags_list, :categories_list, :representative_id)
     end
     
     def set_layout

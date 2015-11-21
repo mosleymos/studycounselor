@@ -49,6 +49,7 @@
 #  vendredi                  :string(255)
 #  samedi                    :string(255)
 #  dimanche                  :string(255)
+#  bac_type                  :string(255)
 #
 
 class Counselor < ActiveRecord::Base
