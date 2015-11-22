@@ -8,6 +8,23 @@ class ApplicationController < ActionController::Base
 	$BAC_MENTIONS = ["Passable","AB", "B", "TB"]
 	$STUDY_LEVEL = ["Bac","Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"]
   $STUDY_DOMAINS = ['Commerce', 'Ingenieur']
+	$STUDY_FILIERES = [
+					'Arts/Culture/Audiovisuel', 
+					'BTS Indistruel', 
+					'BTS Tertiaire', 
+					'Classe Préparatoire', 
+					'Ecoles de commerce', 
+					"Ecoles d'ingénieur", 
+					'Graphisme/Webdesign', 
+					'IEP', 
+					'Licence Droit', 
+					'Médecine', 
+					'Paramédical et Social', 
+					'Universités', 
+					'Autres', 
+					'Je ne sais pas du tout' 
+	
+	]
 
   #before_filter :set_locale
 	
