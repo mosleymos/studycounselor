@@ -129,7 +129,7 @@
     <div class="form-group">
 			<%= f.label :etablissement, "Votre établissement actuel" %>
 			<br>
-			<%= f.select :etablissement, Etablissement.all_etablissement_name, :class => "form-control" %>
+			<%= f.text_field :etablissement, :class => "form-control" %>
 		</div>
 
 		<div class="form-group">
@@ -226,29 +226,16 @@
 </section>
 
 <script type="text/javascript">
-	$(function() {
-		
-		$('#form-field-tags').tokenInput('/categories.json', {
-				crossDomain : false,
-				preventDuplicates: true,
-				propertyToSearch: "name",
-				prePopulate: <%= @counselor.categories.to_json.html_safe %>
-			});
-				
-		
-			$('#taginput').tagsInput({
-			'autocomplete_url' : "/tags.json",
-			'height' : '100px',
-			'width' : '100%',
-			'interactive' : true,
-			'defaultText' : 'Ajouter un métier',
-			'removeWithBackspace' : true,
-			'minChars' : 0,
-			'maxChars' : 0, //if not provided there is no limit,
-			'placeholderColor' : '#666666'
-			// my parameters here
+		$(function() {
+
+    var etablissements = <%= Etablissement.all_etablissement_name %> ;   
+
+		$('#counselor_etablissement').autocomplete({
+      source: etablissements
 		});
-		
+	$(function() {
+
+	
 		$('.summernote').summernote({
 			height : 300, // set editor height
 

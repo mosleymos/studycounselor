@@ -89,7 +89,7 @@
 					<div class="form-group">
 						<%= f.label :etablissement, "Votre établissement actuel" %>
 						<br>
-						<%= f.select :etablissement, Etablissement.all_etablissement_name , :class => "form-control", :required => true %>
+						<%= f.text_field :etablissement, :class => "form-control", :required => true %>
 					</div>
 
 
@@ -227,6 +227,12 @@
 
 <script>
 	$(function() {
+    var etablissements = <%= Etablissement.all_etablissement_name %> ;   
+
+		$('#counselor_etablissement').autocomplete({
+      source: etablissements
+		});
+		
 		$('.summernote').summernote({
 			height : 300, // set editor height
 
@@ -234,8 +240,6 @@
 			maxHeight : null // set maximum height of editor
 
 		});
-
-		
 
 	})
 </script>
