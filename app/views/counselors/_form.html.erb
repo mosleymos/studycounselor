@@ -112,7 +112,7 @@
 		<div class="form-group">
 						<%= f.label :bac_type, "Bac" %>
 						<br>
-						<%= f.select :bac_type,["L","ES", "S", "SMTG", "Pro", "Autres"] , :class => "form-control" %>
+						<%= f.select :bac_type, $BAC_TYPE , :class => "form-control" %>
 		</div>
 
 		<div class="form-group">
@@ -123,7 +123,7 @@
 		<div class="form-group">
 			<%= f.label :study_level, "Années d'études" %>
 			<br>
-			<%= f.select :study_level,["Bac","Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"] , :class => "form-control" %>
+			<%= f.select :study_level, $STUDY_LEVEL , :class => "form-control" %>
 		</div>
 
     <div class="form-group">
