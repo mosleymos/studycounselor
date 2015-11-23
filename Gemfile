@@ -59,18 +59,23 @@ gem 'uuid'
 gem 'json'
 
 ## Mori Gem for development
+group :development do 
+  gem 'mailcatcher'
+  gem 'chronic'
+  gem 'hirb'
+  gem 'awesome_print'
+  gem 'quiet_assets'
+end
 
-gem 'mailcatcher'
-gem 'chronic'
-gem 'hirb'
-gem 'awesome_print'
-gem 'quiet_assets'
-gem 'byebug'
 gem 'figaro'
+gem 'mailjet' # in order to send email
 
 ## APPLICATION GEMS
 
-gem 'mailjet' # in order to send email
+
+#gem 'activeadmin'
+#gem 'meta_search'
+
 
 
 
@@ -85,4 +90,3 @@ gem 'mailjet' # in order to send email
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
- gem 'pry'
