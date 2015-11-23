@@ -110,7 +110,7 @@
 					<div class="form-group">
 						<%= f.label :study_domain, "Domaine d'études" %>
 						<br>
-						<%= f.select :study_domain, $STUDY_DOMAINS , :class => "form-control", :required => true %>
+						<%= f.text_field :study_domain, :class => "form-control", :required => true %>
 					</div>
 	
 					<div class="form-group">
@@ -143,42 +143,31 @@
 					<div class="form-group">
 						<h5>Vos disponibilités:</h5>
 						<%= f.label :lundi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'lundi[]', hour %>
-							<% end %>
-						<br>
+						<%= f.collection_check_boxes :lundi, (9..22).to_a , :to_s, :to_s %>
+					 	<br>
 
 						<%= f.label :mardi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'mardi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :mardi, (9..22).to_a , :to_s, :to_s %>
 						<br>
+
 						<%= f.label :mercredi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'mercredi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :mercredi, (9..22).to_a , :to_s, :to_s %>
 						<br>
+
 						<%= f.label :jeudi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'jeudi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :jeudi, (9..22).to_a , :to_s, :to_s %>
 						<br>
 
 						<%= f.label :vendredi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'vendredi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :vendredi, (9..22).to_a , :to_s, :to_s %>
 						<br>
+
 						<%= f.label :samedi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'samedi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :samedi, (9..22).to_a , :to_s, :to_s %>
 						<br>
 
 						<%= f.label :dimanche %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'dimanche[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :dimanche, (9..22).to_a , :to_s, :to_s %>
 						<br>
 
 					</div>
@@ -243,4 +232,3 @@
 
 	})
 </script>
-

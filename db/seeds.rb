@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+require 'csv'
 
 Administrator.create(email: "admin@studyadvisor.fr", password: "studyadvisor", password_confirmation: "studyadvisor")
+CSV.foreach(Rails.root.to_s + '/Etablissement_All_v2.csv') do |row|
+	Etablissement.create(name: row[1])
+end

@@ -7,6 +7,29 @@
 				<div class="section-inner">
 					<h2>Disponibilités du conseiller</h2>
 					<%= @counselor.availibility_description.to_s.html_safe%>
+							<h4>Mes disponibilités</h4>
+
+							<h5>Lundi</h5>
+							<%= show_my_day_availabilities(@counselor.lundi) %>
+
+							<h5>Mardi</h5>
+							<%= show_my_day_availabilities(@counselor.mardi) %>
+
+							<h5>Mercredi</h5>
+							<%= show_my_day_availabilities(@counselor.mercredi) %>
+
+							<h5>Jeudi</h5>
+							<%= show_my_day_availabilities(@counselor.jeudi) %>
+
+							<h5>Vendredi</h5>
+							<%= show_my_day_availabilities(@counselor.vendredi) %>
+
+							<h5>Samedi</h5>
+							<%= show_my_day_availabilities(@counselor.samedi) %>
+
+							<h5>Dimanche</h5>
+							<%= show_my_day_availabilities(@counselor.dimanche) %>
+
 				</div>
 			</section>
 		</div>

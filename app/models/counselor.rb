@@ -80,14 +80,6 @@ class Counselor < ActiveRecord::Base
   
   has_many :questionings
   has_many :questions, :through => :questionings
-
-	serialize :lundi
-	serialize :mardi
-	serialize :mercredi
-	serialize :jeudi
-	serialize :vendredi
-	serialize :samedi
-	serialize :dimanche
 	
 	# Validations
 	

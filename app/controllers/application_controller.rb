@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
 					'Universités', 
 					'Autres', 
 					'Je ne sais pas du tout' 
-	
 	]
 
   #before_filter :set_locale

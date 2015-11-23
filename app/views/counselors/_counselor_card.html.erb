@@ -24,7 +24,7 @@
 				<strong class="text-uppercase">Domaine d'étude</strong>
 			</div>
 			<div>
-				<%= counselor.study_domain %>
+				<%= counselor.study_domain ||= "Champ non renseigné" %>
 			</div>
 		</div>
 
@@ -33,7 +33,7 @@
 				<strong class="text-uppercase">Postes visés</strong>
 			</div>
 			<div>
-				<%= counselor.looking_job %>
+				<%= counselor.looking_job ||= "Champ non renseigné" %>
 			</div>
 		</div>
 
@@ -42,7 +42,7 @@
 				<strong class="text-uppercase">Lycée</strong>
 			</div>
 			<div>
-				<%= counselor.high_school %>
+				<%= counselor.high_school ||= "Champ non renseigné" %>
 			</div>
 		</div>
 

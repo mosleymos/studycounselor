@@ -42,15 +42,6 @@
 					<h2 class="heading">Les conseillers susceptibles de vous éclairer</h2>
 					<div class="content">
 
-						<% Counselor.first(3).each do |counselor| %>
-						<div class="item">
-							<h3 class="title"><%= link_to counselor.full_name, counselor %> </h3>
-							<p>
-								<%= counselor.general_description%>
-							</p>
-						</div><!--//item-->
-						<% end %>
-
 					</div><!--//content-->
 				</div><!--//section-inner-->
 			</section><!--//section-->

@@ -12,6 +12,6 @@ class Etablissement < ActiveRecord::Base
   def Etablissement.all_etablissement_name
 		etablissements_names =[]
     Etablissement.all.each{|e| etablissements_names << e.name} 
-		etablissements_names
+		etablissements_names.to_json.html_safe
   end
 end
