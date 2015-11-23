@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121094708) do
+ActiveRecord::Schema.define(version: 20151122224142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20151121094708) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "student_name"
   end
 
   add_index "appointments", ["counselor_id"], name: "index_appointments_on_counselor_id", using: :btree
@@ -134,18 +135,26 @@ ActiveRecord::Schema.define(version: 20151121094708) do
     t.string   "study_level"
     t.string   "study_financing"
     t.hstore   "availability"
-    t.string   "lundi"
-    t.string   "mardi"
-    t.string   "mercredi"
-    t.string   "jeudi"
-    t.string   "vendredi"
-    t.string   "samedi"
-    t.string   "dimanche"
+    t.text     "lundi",                     default: [],              array: true
+    t.text     "mardi",                     default: [],              array: true
+    t.text     "mercredi",                  default: [],              array: true
+    t.text     "jeudi",                     default: [],              array: true
+    t.text     "vendredi",                  default: [],              array: true
+    t.text     "samedi",                    default: [],              array: true
+    t.text     "dimanche",                  default: [],              array: true
     t.string   "bac_type"
+    t.string   "job_target"
+    t.string   "etablissement"
   end
 
   add_index "counselors", ["email"], name: "index_counselors_on_email", unique: true, using: :btree
   add_index "counselors", ["reset_password_token"], name: "index_counselors_on_reset_password_token", unique: true, using: :btree
+
+  create_table "etablissements", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "jobbings", force: true do |t|
     t.integer  "job_id"
@@ -294,6 +303,7 @@ ActiveRecord::Schema.define(version: 20151121094708) do
     t.text     "fees"
     t.string   "email"
     t.integer  "representative_id"
+    t.boolean  "partenaire"
   end
 
   add_index "schools", ["representative_id"], name: "index_schools_on_representative_id", using: :btree

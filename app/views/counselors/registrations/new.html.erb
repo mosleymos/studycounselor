@@ -46,7 +46,7 @@
 					<div class="form-group">
 						<%= f.label :birthdate, "Votre date de naissance:" %>
 						<br>
-						<%= f.date_select :birthdate, :start_year => 1980, :end_year => 1995, :required => true, :class => "form-control" %>
+						<%= f.date_select :birthdate, :start_year => 1985, :end_year => 1998, :required => true, :class => "form-control" %>
 					</div>
 					
 					<div class="form-group">
@@ -79,10 +79,17 @@
 						<%= f.text_field :high_school , :class => "form-control", :placeholder => 'Le nom de votre lycée' %>
 					</div>
 
-		<div class="form-group">
+					<div class="form-group">
 						<%= f.label :bac_type, "Bac" %>
 						<br>
 						<%= f.select :bac_type, $BAC_TYPE, :class => "form-control", :required => true %>
+					</div>
+
+
+					<div class="form-group">
+						<%= f.label :etablissement, "Votre établissement actuel" %>
+						<br>
+						<%= f.text_field :etablissement, :class => "form-control", :required => true %>
 					</div>
 
 
@@ -100,6 +107,18 @@
 						<%= f.select :study_level, $STUDY_LEVEL , :class => "form-control", :required => true %>
 					</div>
 
+					<div class="form-group">
+						<%= f.label :study_domain, "Domaine d'études" %>
+						<br>
+						<%= f.text_field :study_domain, :class => "form-control", :required => true %>
+					</div>
+	
+					<div class="form-group">
+						<%= f.label :job_target, "Poste visé"  %>
+						<br>
+						<%= f.text_field :job_target , :placeholder => "Quel est le poste que je souhaite atteindre", :class =>"input-group" %>
+					</div>
+
 				
 					<div class="form-group">
 						<%= f.label :school_description, "Qui j'étais en terminale ?" %>
@@ -114,6 +133,7 @@
 						<%= f.text_area :jobs_description , :class => "form-control summernote" %>
 					</div>
 					
+					
 					<div class="form-group">
 						<%= f.label :availibility_description, "Ce à quoi je me destine:" %>
 						<br>
@@ -123,42 +143,31 @@
 					<div class="form-group">
 						<h5>Vos disponibilités:</h5>
 						<%= f.label :lundi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'lundi[]', hour %>
-							<% end %>
-						<br>
+						<%= f.collection_check_boxes :lundi, (9..22).to_a , :to_s, :to_s %>
+					 	<br>
 
 						<%= f.label :mardi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'mardi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :mardi, (9..22).to_a , :to_s, :to_s %>
 						<br>
+
 						<%= f.label :mercredi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'mercredi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :mercredi, (9..22).to_a , :to_s, :to_s %>
 						<br>
+
 						<%= f.label :jeudi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'jeudi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :jeudi, (9..22).to_a , :to_s, :to_s %>
 						<br>
 
 						<%= f.label :vendredi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'vendredi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :vendredi, (9..22).to_a , :to_s, :to_s %>
 						<br>
+
 						<%= f.label :samedi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'samedi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :samedi, (9..22).to_a , :to_s, :to_s %>
 						<br>
 
 						<%= f.label :dimanche %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'dimanche[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :dimanche, (9..22).to_a , :to_s, :to_s %>
 						<br>
 
 					</div>
@@ -207,6 +216,12 @@
 
 <script>
 	$(function() {
+    var etablissements = <%= Etablissement.all_etablissement_name %> ;   
+
+		$('#counselor_etablissement').autocomplete({
+      source: etablissements
+		});
+		
 		$('.summernote').summernote({
 			height : 300, // set editor height
 
@@ -215,8 +230,5 @@
 
 		});
 
-		
-
 	})
 </script>
-

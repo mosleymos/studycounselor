@@ -50,6 +50,8 @@
 #  samedi                    :string(255)
 #  dimanche                  :string(255)
 #  bac_type                  :string(255)
+#  job_target                :string(255)
+#  etablissement             :string(255)
 #
 
 class Counselor < ActiveRecord::Base
@@ -78,18 +80,10 @@ class Counselor < ActiveRecord::Base
   
   has_many :questionings
   has_many :questions, :through => :questionings
-
-	serialize :lundi
-	serialize :mardi
-	serialize :mercredi
-	serialize :jeudi
-	serialize :vendredi
-	serialize :samedi
-	serialize :dimanche
 	
 	# Validations
 	
-	validates :first_name, :last_name, :birthdate,:address , :telephone, :bac_type, :high_school, :study_domain,  presence: true
+	validates :first_name, :last_name, :birthdate,:address , :telephone,  presence: true
   
   def age
     Time.now.year - self.birthdate.year 

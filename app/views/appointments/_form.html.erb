@@ -15,8 +15,15 @@
 
 <section class="about section">
 	<div class="section-inner">
+
 		<div class="form-group">
-			<%= f.label :telephone %>
+			<%= f.label :student_name, "Votre nom et prénom" %>
+			<br>
+			<%= f.text_field :student_name, class: "form-control"  %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :telephone, "Votre numéro de téléphone" %>
 			<br>
 			<%= f.text_field :telephone, class: "form-control"  %>
 		</div>

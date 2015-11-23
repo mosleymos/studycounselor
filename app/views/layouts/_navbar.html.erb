@@ -11,9 +11,13 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-			<% if counselor_signed_in?%>
+			     
+            <li class="nadvence-family"><%= link_to "Advisors", counselors_path%></li>
+            
+            <li class="nadvence-family"><%= link_to "Etablissements", schools_path %></li>
+
+<% if counselor_signed_in?%>
 			<li class="active nadvence-family"><%= link_to "Dashboard Counselor", profile_counselor_path(current_counselor) %></li>
-			<li><%= link_to "Log out", destroy_counselor_session_path, method: :delete %></li>
 												
 
 			</li>
@@ -31,11 +35,7 @@
 										<li class="nadvence-family"><%= link_to "Devenir advisor", new_counselor_registration_path %></li>
             
 			<% end %>
-            
-            <li class="nadvence-family"><%= link_to "Advisors", counselors_path%></li>
-            
-            <li class="nadvence-family"><%= link_to "Etablissements", schools_path %></li>
-
+       
 
                 
               </ul>
@@ -43,13 +43,13 @@
           </ul>
 			<ul class="nav navbar-nav navbar-right">
 							<% if counselor_signed_in? %>
-											<li><%= link_to "Sign out", destroy_counselor_session_path, method: :delete %></li>
+											<li><%= link_to "Se déconnecter", destroy_counselor_session_path, method: :delete %></li>
 							<% elsif administrator_signed_in? %>
-											<li><%= link_to "Sign out", destroy_administrator_session_path, method: :delete %></li>
+											<li><%= link_to "Se déconnecter", destroy_administrator_session_path, method: :delete %></li>
 							<% elsif representative_signed_in? %>
-											<li><%= link_to "Sign out", destroy_representative_session_path, method: :delete %></li>
+											<li><%= link_to "Se déconnecter", destroy_representative_session_path, method: :delete %></li>
 							<% else %>
-											<li><%= link_to "Sign in", new_counselor_session_path %></li>
+											<li><%= link_to "Se connecter", new_counselor_session_path %></li>
 							<% end %>
 
 				<li class="facebook-bg"><a href="https://www.facebook.com/rebbleit" target="_blank"><i class="fa fa-facebook"></i></a></li>

@@ -30,7 +30,7 @@
 		<div class="form-group">
 			<%= f.label :birthdate, "Date de naissance" %>
 			<br>
-			<%= f.date_select :birthdate, class: "form-control", start_year: 1980, end_year: 1995 %>
+			<%= f.date_select :birthdate, class: "form-control", start_year: 1985, end_year: 1998 %>
 		</div>
 		<div class="form-group">
 			<%= f.label :email, "Email" %>
@@ -48,56 +48,46 @@
 
 			<h5>Vos disponibilités:</h5>
 						<%= f.label :lundi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'lundi[]', hour %>
-							<% end %>
-						<br>
+						<%= f.collection_check_boxes :lundi, (9..22).to_a , :to_s, :to_s %>
+					 	<br>
 
 						<%= f.label :mardi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'mardi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :mardi, (9..22).to_a , :to_s, :to_s %>
 						<br>
+
 						<%= f.label :mercredi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'mercredi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :mercredi, (9..22).to_a , :to_s, :to_s %>
 						<br>
+
 						<%= f.label :jeudi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'jeudi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :jeudi, (9..22).to_a , :to_s, :to_s %>
 						<br>
 
 						<%= f.label :vendredi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'vendredi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :vendredi, (9..22).to_a , :to_s, :to_s %>
 						<br>
+
 						<%= f.label :samedi %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'samedi[]', hour %>
-							<% end %>
+						<%= f.collection_check_boxes :samedi, (9..22).to_a , :to_s, :to_s %>
 						<br>
 
 						<%= f.label :dimanche %>	
-					    <%= $HOURS.each do |hour| %>
-											<%= check_box_tag 'dimanche[]', hour %>
-							<% end %>
-						<br>
+						<%= f.collection_check_boxes :dimanche, (9..22).to_a , :to_s, :to_s %>
 	
 		</div>
 		
 		<div class="form-group">
-			<%= f.label :moto, "VOtre devise" %>
+			<%= f.label :moto, "Votre devise" %>
 			<br>
 			<%= f.text_field :moto, class: "form-control" %>
 		</div>
+
 		<div class="form-group">
 			<%= f.label :study_domain, "Domaine d'étude" %>
 			<br>
 			<%= f.text_field :study_domain, class: "form-control" %>
 		</div>
+
 		<div class="form-group">
 			<%= f.label :high_school, "Nom du Lycée" %>
 			<br>
@@ -112,19 +102,26 @@
 		<div class="form-group">
 						<%= f.label :bac_type, "Bac" %>
 						<br>
-						<%= f.select :bac_type,["L","ES", "S", "SMTG", "Pro", "Autres"] , :class => "form-control" %>
+						<%= f.select :bac_type, $BAC_TYPE , :class => "form-control" %>
 		</div>
 
 		<div class="form-group">
 			<%= f.label :bac_mention, "Mention au bac" %>
 			<br>
-			<%= f.select :bac_mention,["Non","AB", "B", "TB"] , :class => "form-control" %>
+			<%= f.select :bac_mention,$BAC_MENTIONS , :class => "form-control" %>
 		</div>
 		<div class="form-group">
-			<%= f.label :study_level, "Niveau d'études" %>
+			<%= f.label :study_level, "Années d'études" %>
 			<br>
-			<%= f.select :study_level,["Bac","Bac+1", "Bac+2", "Bac+3", "Bac+4", "Bac+5"] , :class => "form-control" %>
+			<%= f.select :study_level, $STUDY_LEVEL , :class => "form-control" %>
 		</div>
+
+    <div class="form-group">
+			<%= f.label :etablissement, "Votre établissement actuel" %>
+			<br>
+			<%= f.text_field :etablissement, :class => "form-control" %>
+		</div>
+
 		<div class="form-group">
 			<%= f.label :study_financing, "Financement" %>
 			<br>
@@ -211,26 +208,6 @@
 
 	</div>
 </section>
-
-<section class="about section">
-	<div class="section-inner">
-
-		<h2 class="page-header">Catégories et Tags</h2>
-
-		<div class="form-group">
-			<%= f.label :categories_list, "Les catégories dans lesquelles vous êtes compétents", :class => 'control-label' %>
-			<div class="controls">
-				<%= f.text_field :categories_list, :placeholder => "Les catégories", :id =>"form-field-tags" %>
-				<span class="help-block">Liste des catégories dans lesquelles vous êtes qualifiés</span>
-			</div>
-		</div>
-
-		<div class="form-group">
-			<%= f.label :tags_list, "Tags associés" %>
-			<br>
-			<%= f.text_field :tags_list, class: "form-control", :id => "taginput" %>
-		</div>
-
 		<div class="form-group text-center">
 			<%= f.submit "Mettre à jour le profil", class: "btn btn-success btn-lg" %>
 		</div>
@@ -239,29 +216,16 @@
 </section>
 
 <script type="text/javascript">
-	$(function() {
-		
-		$('#form-field-tags').tokenInput('/categories.json', {
-				crossDomain : false,
-				preventDuplicates: true,
-				propertyToSearch: "name",
-				prePopulate: <%= @counselor.categories.to_json.html_safe %>
-			});
-				
-		
-			$('#taginput').tagsInput({
-			'autocomplete_url' : "/tags.json",
-			'height' : '100px',
-			'width' : '100%',
-			'interactive' : true,
-			'defaultText' : 'Ajouter un métier',
-			'removeWithBackspace' : true,
-			'minChars' : 0,
-			'maxChars' : 0, //if not provided there is no limit,
-			'placeholderColor' : '#666666'
-			// my parameters here
+		$(function() {
+
+    var etablissements = <%= Etablissement.all_etablissement_name %> ;   
+
+		$('#counselor_etablissement').autocomplete({
+      source: etablissements
 		});
-		
+	$(function() {
+
+	
 		$('.summernote').summernote({
 			height : 300, // set editor height
 

@@ -1,22 +1,141 @@
 <div class="counselor-card bg-white text-left">
 
-	<div class="col-xs-4 col-md-3">
-		<%= image_tag "counselor.jpg", class: "img-circle", style: "width: 120px; height: 120px;"%>
-    <p><%= counselor.general_description.html_safe  %></p>
-		<div class="text-center text-15 studyquizz-blockquote">
-			"Vers l'infini et au dela"
+  <div class="row">
+          <div class="col-md-8">
+
+
+									<div class="col-xs-4 col-md-4">
+										<%= show_counselor_avatar(counselor) %>
+
+
+
+		<div class="margin-top-10">
+			<div>
+				<strong class="text-uppercase">Domaine d'étude</strong>
+			</div>
+			<div>
+				<%= counselor.study_domain %>
+			</div>
 		</div>
 
+		<div class="margin-top-10">
+			<div>
+				<strong class="text-uppercase">Postes visés</strong>
+			</div>
+			<div>
+				<%= counselor.looking_job %>
+			</div>
+		</div>
+
+		<div class="margin-top-10">
+			<div>
+				<strong class="text-uppercase">Lycée</strong>
+			</div>
+			<div>
+				<%= counselor.high_school %>
+			</div>
+		</div>
+
+		<div class="margin-top-10">
+			<div>
+				<strong class="text-uppercase">Bac (Mention)</strong>
+			</div>
+			<div>
+				<%= counselor.bac_type %>  (<%= counselor.bac_mention %>)
+			</div>
+		</div>
+
+		<div class="margin-top-10">
+			<div>
+				<strong class="text-uppercase">Niveau d'études</strong>
+			</div>
+			<div>
+				<%= counselor.study_level %>
+			</div>
+		</div>
+
+	
+									</div>
+									<div class="col-xs-8">
+										<h3 class="color-green"><%= link_to counselor.first_name, counselor%></h3>
+										<div>
+											<b><%= counselor.etablissement %></b>
+										</div>
+										<div>
+											<%= counselor.age %> ans
+										</div>
+										<div>
+											<span class="level color-green">
+												<br class="visible-xs"/>
+												<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+										</div>
+					</div>
+
+					<div class="col-md-7">
+								
+									<h4>Description générale</h4>
+									<p><%= counselor.general_description.html_safe %></p>
+									
+									<h4>Moi en Terminale, j'étais :</h4>
+									<p><%= counselor.school_description.html_safe %></p>
+						
+									<h4>Mon parcours d'orientation</h4>
+									<p><%= counselor.jobs_description.html_safe %></p>
+						
+									<h4>Ce à quoi je me destine</h4>
+									<p><%= counselor.availibility_description.html_safe %></p>
+		<div class="text-center text-15 studyquizz-blockquote">
+				<%= counselor.moto || "Aucun slogan" %>
+		</div>
+			
+
+					</div>
+  </div>
+
+	<div class="col-md-2">
+			<h4>Mes disponibilités</h4>
+
+			<h5>Lundi</h5>
+			<%= show_my_day_availabilities(counselor.lundi) %>
+
+			<h5>Mardi</h5>
+			<%= show_my_day_availabilities(counselor.mardi) %>
+
+			<h5>Mercredi</h5>
+			<%= show_my_day_availabilities(counselor.mercredi) %>
+
+			<h5>Jeudi</h5>
+			<%= show_my_day_availabilities(counselor.jeudi) %>
+
+			<h5>Vendredi</h5>
+			<%= show_my_day_availabilities(counselor.vendredi) %>
+
+			<h5>Samedi</h5>
+			<%= show_my_day_availabilities(counselor.samedi) %>
+
+			<h5>Dimanche</h5>
+			<%= show_my_day_availabilities(counselor.dimanche) %>
 	</div>
 
-	<div class="col-md-3">
-		<p><%= counselor.general_description.html_safe %></p>
+
+
+	<div class="col-md-12">
+		<hr class="counselor-hr">
 	</div>
 
-	<div class="col-md-6">
-		<p><%= counselor.general_description.html_safe  %></p>
+	<% if not current_counselor %>
+
+	<div class="col-md-12">
+		<%= link_to "En savoir plus",  counselor, class: "btn btn-blue btn-block text-uppercase"%>
 	</div>
+	<div class="col-sm-6">
+		<%= link_to "Chatter",  counselor, class: "btn btn-green btn-block text-uppercase"%>
 
 	</div>
+	<div class="col-sm-6">
+		<%= link_to "Rendez-vous",  new_counselor_appointment_path(counselor.id), class: "btn btn-orange btn-block text-uppercase"%>
+	</div>
+
+	<% end %>
 
 </div>
