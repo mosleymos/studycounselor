@@ -32,14 +32,14 @@ Rails.application.routes.draw do
 
   resources :questions
 
-# resources :administrators do
-#   member do 
-#     get 'dashboard'
-#   end
-#   collection do
-#      devise_for :administrators
-#   end
-# end
+ resources :administrators do
+   member do 
+     get 'dashboard'
+   end
+   collection do
+      devise_for :administrators
+   end
+ end
   
   resources :rankings
 
